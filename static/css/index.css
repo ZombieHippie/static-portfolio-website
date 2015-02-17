@@ -1,0 +1,31 @@
+
+ul.project-list {
+  list-style: none;
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+}
+
+ul.project-list li {
+  display: inline-block;
+}
+ul.project-list li a {
+  width: 240px;
+  height: 300px;
+  padding: 20px;
+  display: inline-block;
+}
+ul.project-list h3 {
+  margin: 0;
+}
+ul.project-list p {
+  margin: 0;
+  height: 60px;
+  display: block;
+  scroll-y: auto;
+}
+ul.project-list img {
+  height: 240px;
+  width: 240px;
+}
