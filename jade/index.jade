@@ -3,9 +3,9 @@ extend layout.extend
 block head
   link(href="/css/index.css" rel="stylesheet")
 
-mixin projectTile(name, imgURL, description, url)
-  li: a(href=url)
-    img(src=imgURL)
+mixin projectTile(name, slug, description)
+  li: a(href="/post/#{slug}.html")
+    img(src="/thumb/#{slug}.png")
     h3=name
     p=description
 
@@ -13,4 +13,4 @@ mixin projectTile(name, imgURL, description, url)
 block body
   ul.project-list
     each project in projects
-      +projectTile(project.name, project.img, project.desc, project.url)
+      +projectTile(project.name, project.slug, project.desc)
