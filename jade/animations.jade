@@ -1,0 +1,18 @@
+extend layout.extend
+
+block head
+  link(href="/css/index.css" rel="stylesheet")
+
+mixin projectTile(name, slug, img, description)
+  li: a(href="/post/#{slug}.html")
+    img(src="/thumb/#{img || (slug + '.png')}")
+    h3=name
+    p=description
+
+//-projects = require("projects.cson")
+block body
+  ul.project-list
+    - var typeTest = /animation/
+    each project in projects
+      if typeTest.exec(project.type) != null
+        +projectTile(project.name, project.slug, project.img, project.desc)
