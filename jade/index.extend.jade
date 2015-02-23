@@ -2,6 +2,7 @@ extend layout.extend
 
 block head
   link(href="/css/index.css" rel="stylesheet")
+  block head-title
 
 mixin projectTile(name, slug, img, description)
   li: a(href="/post/#{slug}.html")

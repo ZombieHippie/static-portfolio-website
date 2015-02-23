@@ -1,7 +1,11 @@
 extend index.extend
 
+block head-title
+  title Cole Lawrence: Home
+
 //-projects = require("projects.cson")
 block body
+  center: h2 All Projects
   ul.project-list
     each project in projects
       +projectTile(project.name, project.slug, project.img, project.desc)

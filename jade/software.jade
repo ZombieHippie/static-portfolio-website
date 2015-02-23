@@ -1,7 +1,11 @@
 extend index.extend
 
+block head-title
+  title Cole Lawrence: Software
+
 //-projects = require("projects.cson")
 block body
+  center: h2 Software Projects
   ul.project-list
     - var typeTest = /software/
     each project in projects

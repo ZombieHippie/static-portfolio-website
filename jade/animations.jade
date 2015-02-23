@@ -1,7 +1,11 @@
 extend index.extend
 
+block head-title
+  title Cole Lawrence: Animations
+
 //-projects = require("projects.cson")
 block body
+  center: h2 Animation Projects
   ul.project-list
     - var typeTest = /animation/
     each project in projects
