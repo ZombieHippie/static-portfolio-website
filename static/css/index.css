@@ -6,11 +6,17 @@ ul.project-list {
 ul.project-list li {
   display: inline-block;
 }
+
 ul.project-list li a {
   width: 240px;
   height: 300px;
   padding: 20px;
   display: inline-block;
+}
+@media screen {
+ul.project-list li a { height: 240px; }
+ul.project-list li a p,
+ul.project-list li a h3 { display: none; }
 }
 ul.project-list h3 {
   margin: 0;

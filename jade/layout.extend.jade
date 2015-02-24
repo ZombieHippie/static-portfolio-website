@@ -14,16 +14,20 @@ head
 
 
 body
-  .mast-head
-    a(href=prefix + "index.html" title="home page"): h1 Cole Lawrence
-    nav
-      a(href=prefix + "animations.html") Animations
-      | &nbsp; - &nbsp;
-      a(href=prefix + "software.html") Software
-      | &nbsp; - &nbsp;
-      a(href=prefix + "graphics.html") Graphics
-    br
-  block body
+  article
+    header.mast-head
+      a(href=prefix + "index.html" title="home page")
+        h1 Cole Lawrence
+        img(src="https://2.gravatar.com/avatar/a88e4cbf821389a6a010f6859cc55e2a?d=https%3A%2F%2Fidenticons.github.com%2F08de6fc5a65738b4e8893ed05fa35247.png&r=x&s=440")
+      nav
+        a(href=prefix + "animations.html") Animations
+        | &nbsp; - &nbsp;
+        a(href=prefix + "software.html") Software
+        | &nbsp; - &nbsp;
+        a(href=prefix + "graphics.html") Graphics
+      br
+    section.page-content
+      block body
   br
   br
   br
