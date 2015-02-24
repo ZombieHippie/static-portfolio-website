@@ -1,8 +1,7 @@
 body {
-  max-width: 950px;
-  margin: 0 auto;
-  padding: 0 24px;
+  max-width: 38rem;
 }
+
 center>img {
   max-height: 80vh;
   max-width: 100%;

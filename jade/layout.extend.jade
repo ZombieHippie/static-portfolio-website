@@ -1,22 +1,40 @@
 doctype html5
 
+block level
+- var prefix = ""
+- if (typeof level === "number") {
+-   for (var i = 0; i < level; i++) {
+-     prefix += "../" }}
+
 head
   meta(name="viewport" content="width=device-width, initial-scale=1")
-  style.
-    html { font-family: sans-serif }
-    .mast-head { text-align: center }
+  style img { cursor: pointer }
+  link(href=prefix + "css/site.css" rel="stylesheet")
   block head
+
 
 body
   .mast-head
-    a(href="/index.html" title="home page"): h1 Cole Lawrence
+    a(href=prefix + "index.html" title="home page"): h1 Cole Lawrence
     nav
-      a(href="/animations.html") Animations
+      a(href=prefix + "animations.html") Animations
       | &nbsp; - &nbsp;
-      a(href="/software.html") Software
+      a(href=prefix + "software.html") Software
       | &nbsp; - &nbsp;
-      a(href="/graphics.html") Graphics
+      a(href=prefix + "graphics.html") Graphics
+    br
   block body
   br
   br
   br
+
+footer
+  script.
+    (function(){
+      var onClickOpenImage = function (event) {
+        window.open(event.target.src, "_self")
+      }
+      var imgs = document.getElementsByTagName("img")
+      for (var i = 0; i < imgs.length; i++)
+        imgs[i].addEventListener("click", onClickOpenImage)
+    })();

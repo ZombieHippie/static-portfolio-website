@@ -1,14 +1,13 @@
-extend ../layout.extend
+extend post.extend
 
-block head
+block head-title
   title Cole Lawrence - FreeSketch Collaborative Drawing
-  link(href="/css/post.css" rel="stylesheet")
 
 block body
   h2 FreeSketch Collaborative Drawing
   p This webapp uses nodejs in combination with websockets and CoffeeScript to create a fun collaborative sketching canvas.
   center
-    img(src="/images/freesketch-game/freesketch-screenshot.jpg" title="Desktop screenshot showing how the drawings made by two different people are communicated between the different clients connected to the game.")
+    img(src="../images/freesketch-game/freesketch-screenshot.jpg" title="Desktop screenshot showing how the drawings made by two different people are communicated between the different clients connected to the game.")
   p
     | You can press&nbsp;
     code space
