@@ -1,17 +1,31 @@
 <!DOCTYPE html5>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <style>
-    html { font-family: sans-serif }
-    .mast-head { text-align: center }
-  </style>
+  <style>img { cursor: pointer }</style>
+  <link href="../css/site.css" rel="stylesheet"/>
+  <link href="../css/post.css" rel="stylesheet"/>
   <title>Cole Lawrence - Flash Thrower Game</title>
-  <link href="/css/post.css" rel="stylesheet"/>
 </head>
 <body>
-  <div class="mast-head"><a href="/index.html" title="home page">
-      <h1>Cole Lawrence</h1></a></div>
+  <div class="mast-head"><a href="../index.html" title="home page">
+      <h1>Cole Lawrence</h1></a>
+    <nav><a href="../animations.html">Animations</a>&nbsp; - &nbsp;<a href="../software.html">Software</a>&nbsp; - &nbsp;<a href="../graphics.html">Graphics</a></nav><br/>
+  </div>
   <h2>Flash Thrower Game</h2>
   <p>I built this game while attending Broadmoor Technical Center in 10th grade.</p>
-  <p>You can use the mouse to aim your thrower's arm, then you can also move your cursor closer or further away from the thrower to achieve less or more powerful throws. </p>
+  <center><img src="../images/thrower-game/thrower-game-screenshot-full.png" title="In-game screenshot of hero waiting to throw the ball."/></center>
+  <p>You can use the mouse to aim your thrower's arm, then you can also move your cursor closer or further away from the thrower to achieve less or more powerful throws.</p>
+  <center><img src="../images/thrower-game/thrower-game-screenshot.png" title="In-game screenshot of hero throwing the ball on the beginning stage."/></center><br/><br/><br/>
 </body>
+<footer>
+  <script>
+    (function(){
+      var onClickOpenImage = function (event) {
+        window.open(event.target.src, "_self")
+      }
+      var imgs = document.getElementsByTagName("img")
+      for (var i = 0; i < imgs.length; i++)
+        imgs[i].addEventListener("click", onClickOpenImage)
+    })();
+  </script>
+</footer>

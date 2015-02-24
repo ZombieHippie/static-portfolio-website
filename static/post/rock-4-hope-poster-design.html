@@ -1,17 +1,30 @@
 <!DOCTYPE html5>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <style>
-    html { font-family: sans-serif }
-    .mast-head { text-align: center }
-  </style>
+  <style>img { cursor: pointer }</style>
+  <link href="../css/site.css" rel="stylesheet"/>
+  <link href="../css/post.css" rel="stylesheet"/>
   <title>Cole Lawrence - Rock 4 Hope Poster Layout Design</title>
-  <link href="/css/post.css" rel="stylesheet"/>
 </head>
 <body>
-  <div class="mast-head"><a href="/index.html" title="home page">
-      <h1>Cole Lawrence</h1></a></div>
+  <div class="mast-head"><a href="../index.html" title="home page">
+      <h1>Cole Lawrence</h1></a>
+    <nav><a href="../animations.html">Animations</a>&nbsp; - &nbsp;<a href="../software.html">Software</a>&nbsp; - &nbsp;<a href="../graphics.html">Graphics</a></nav><br/>
+  </div>
   <h2>Rock 4 Hope Poster Layout Design</h2>
   <p>This is one of my favorite poster designs. Given the amount of information provided, I wanted to create a poster that was both eye-catching and yet easy to read.</p>
-  <p>Another girl in our society named Sarah Hinman designed the actual logo graphics used in the center.</p>
+  <center><img src="../images/rock4hope-british-invasion/Rock4Hope2013FlyerV1R5-BRITISH-INVASION.png"/></center>
+  <p>Sarah Hinman illustrated the logo and people walking used in the center.</p><br/><br/><br/>
 </body>
+<footer>
+  <script>
+    (function(){
+      var onClickOpenImage = function (event) {
+        window.open(event.target.src, "_self")
+      }
+      var imgs = document.getElementsByTagName("img")
+      for (var i = 0; i < imgs.length; i++)
+        imgs[i].addEventListener("click", onClickOpenImage)
+    })();
+  </script>
+</footer>

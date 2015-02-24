@@ -1,16 +1,29 @@
 <!DOCTYPE html5>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <style>
-    html { font-family: sans-serif }
-    .mast-head { text-align: center }
-  </style>
+  <style>img { cursor: pointer }</style>
+  <link href="../css/site.css" rel="stylesheet"/>
+  <link href="../css/post.css" rel="stylesheet"/>
   <title>Cole Lawrence - International Club T Shirt</title>
-  <link href="/css/post.css" rel="stylesheet"/>
 </head>
 <body>
-  <div class="mast-head"><a href="/index.html" title="home page">
-      <h1>Cole Lawrence</h1></a></div>
+  <div class="mast-head"><a href="../index.html" title="home page">
+      <h1>Cole Lawrence</h1></a>
+    <nav><a href="../animations.html">Animations</a>&nbsp; - &nbsp;<a href="../software.html">Software</a>&nbsp; - &nbsp;<a href="../graphics.html">Graphics</a></nav><br/>
+  </div>
   <h2>International Club T Shirt</h2>
   <p>Fun little drawings of vikings from different cultures made this T Shirt design an instant favorite for our members.</p>
+  <center><img src="../images/international-club-shirt/intlclubv3.jpg"/><img src="../images/international-club-shirt/intlclub-present.jpg"/></center><br/><br/><br/>
 </body>
+<footer>
+  <script>
+    (function(){
+      var onClickOpenImage = function (event) {
+        window.open(event.target.src, "_self")
+      }
+      var imgs = document.getElementsByTagName("img")
+      for (var i = 0; i < imgs.length; i++)
+        imgs[i].addEventListener("click", onClickOpenImage)
+    })();
+  </script>
+</footer>

@@ -1,16 +1,30 @@
 <!DOCTYPE html5>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <style>
-    html { font-family: sans-serif }
-    .mast-head { text-align: center }
-  </style>
+  <style>img { cursor: pointer }</style>
+  <link href="../css/site.css" rel="stylesheet"/>
+  <link href="../css/post.css" rel="stylesheet"/>
   <title>Cole Lawrence - Foxtrot HTML5 Game</title>
-  <link href="/css/post.css" rel="stylesheet"/>
 </head>
 <body>
-  <div class="mast-head"><a href="/index.html" title="home page">
-      <h1>Cole Lawrence</h1></a></div>
+  <div class="mast-head"><a href="../index.html" title="home page">
+      <h1>Cole Lawrence</h1></a>
+    <nav><a href="../animations.html">Animations</a>&nbsp; - &nbsp;<a href="../software.html">Software</a>&nbsp; - &nbsp;<a href="../graphics.html">Graphics</a></nav><br/>
+  </div>
   <h2>Foxtrot HTML5 Game</h2>
+  <center><img src="../images/foxtrot/foxtrot-screenshot.jpg" title="In-game screenshot of fox jumping off to the right."/></center>
   <p>This game is built with CoffeeScript to resemble another popular game known as Doodle-jump.</p>
+  <p>For further information,&nbsp;<a href="//github.com/ZombieHippie/foxtrot" title="ZombieHippie/Foxtrot">view the source code on Github</a>, or&nbsp;<a href="//foxtrot.zombiehippie.com" title="Play Foxtrot game in this browser">play the game</a>.</p><br/><br/><br/>
 </body>
+<footer>
+  <script>
+    (function(){
+      var onClickOpenImage = function (event) {
+        window.open(event.target.src, "_self")
+      }
+      var imgs = document.getElementsByTagName("img")
+      for (var i = 0; i < imgs.length; i++)
+        imgs[i].addEventListener("click", onClickOpenImage)
+    })();
+  </script>
+</footer>
