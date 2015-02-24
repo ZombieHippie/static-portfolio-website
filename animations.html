@@ -1,0 +1,43 @@
+<!DOCTYPE html5>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <style>img { cursor: pointer }</style>
+  <link href="css/site.css" rel="stylesheet"/>
+  <link href="css/index.css" rel="stylesheet"/>
+  <title>Cole Lawrence: Animations</title>
+</head>
+<body>
+  <div class="mast-head"><a href="index.html" title="home page">
+      <h1>Cole Lawrence</h1></a>
+    <nav><a href="animations.html">Animations</a>&nbsp; - &nbsp;<a href="software.html">Software</a>&nbsp; - &nbsp;<a href="graphics.html">Graphics</a></nav><br/>
+  </div>
+  <center>
+    <h2>Animation Projects</h2>
+  </center>
+  <ul class="project-list">
+    <li><a href="post/the-animator-2013.html"><img src="thumb/the-animator-2013.png"/>
+        <h3>The Animator 2013</h3>
+        <p>3D Animation in Maya created for the SCAD Challenge of 2013</p></a></li>
+    <li><a href="post/toasty-animation.html"><img src="thumb/toasty.jpg"/>
+        <h3>Toasty</h3>
+        <p>3D Animation in Maya created at the SCAD Summer Enrichment Program</p></a></li>
+    <li><a href="post/lego-minecraft.html"><img src="thumb/minecraftsma.jpg"/>
+        <h3>Lego Minecraft</h3>
+        <p>Stop motion animation created at the Broadmoor Technical Center</p></a></li>
+    <li><a href="post/hyacinth-blue-animation.html"><img src="thumb/hyacinth.jpg"/>
+        <h3>The Girl in Hyacinth Blue Trailer</h3>
+        <p>Stop motion animation created for my 10th grade English class</p></a></li>
+  </ul><br/><br/><br/>
+</body>
+<footer>
+  <script>
+    (function(){
+      var onClickOpenImage = function (event) {
+        window.open(event.target.src, "_self")
+      }
+      var imgs = document.getElementsByTagName("img")
+      for (var i = 0; i < imgs.length; i++)
+        imgs[i].addEventListener("click", onClickOpenImage)
+    })();
+  </script>
+</footer>

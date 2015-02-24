@@ -1,0 +1,46 @@
+<!DOCTYPE html5>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <style>img { cursor: pointer }</style>
+  <link href="css/site.css" rel="stylesheet"/>
+  <link href="css/index.css" rel="stylesheet"/>
+  <title>Cole Lawrence: Software</title>
+</head>
+<body>
+  <div class="mast-head"><a href="index.html" title="home page">
+      <h1>Cole Lawrence</h1></a>
+    <nav><a href="animations.html">Animations</a>&nbsp; - &nbsp;<a href="software.html">Software</a>&nbsp; - &nbsp;<a href="graphics.html">Graphics</a></nav><br/>
+  </div>
+  <center>
+    <h2>Software Projects</h2>
+  </center>
+  <ul class="project-list">
+    <li><a href="post/portfolio-website-2014.html"><img src="thumb/portfolio-2014.jpg"/>
+        <h3>Portfolio Website 2014</h3>
+        <p>A combination of libraries are used to create this mobile friendly, unique, User-Experience</p></a></li>
+    <li><a href="post/foxtrot-html5-game.html"><img src="thumb/foxtrot.gif"/>
+        <h3>Foxtrot HTML5 Game</h3>
+        <p>CoffeeScript and canvas are used to make this Doodlejump-esque game</p></a></li>
+    <li><a href="post/flash-platformer.html"><img src="thumb/platformer.gif"/>
+        <h3>Platformer</h3>
+        <p>This was my first game using Flash and AS3</p></a></li>
+    <li><a href="post/flash-thrower-game.html"><img src="thumb/thrower.gif"/>
+        <h3>Thrower Game</h3>
+        <p>Game with multiple levels created while at Broadmoor Technical Center in 10th grade</p></a></li>
+    <li><a href="post/freesketch-collaborative-drawing.html"><img src="thumb/freesketch.jpg"/>
+        <h3>FreeSketch</h3>
+        <p>A collaborative drawing canvas for multiple friends to draw on using Websockets and Nodejs</p></a></li>
+  </ul><br/><br/><br/>
+</body>
+<footer>
+  <script>
+    (function(){
+      var onClickOpenImage = function (event) {
+        window.open(event.target.src, "_self")
+      }
+      var imgs = document.getElementsByTagName("img")
+      for (var i = 0; i < imgs.length; i++)
+        imgs[i].addEventListener("click", onClickOpenImage)
+    })();
+  </script>
+</footer>

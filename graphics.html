@@ -1,0 +1,43 @@
+<!DOCTYPE html5>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <style>img { cursor: pointer }</style>
+  <link href="css/site.css" rel="stylesheet"/>
+  <link href="css/index.css" rel="stylesheet"/>
+  <title>Cole Lawrence: Graphics</title>
+</head>
+<body>
+  <div class="mast-head"><a href="index.html" title="home page">
+      <h1>Cole Lawrence</h1></a>
+    <nav><a href="animations.html">Animations</a>&nbsp; - &nbsp;<a href="software.html">Software</a>&nbsp; - &nbsp;<a href="graphics.html">Graphics</a></nav><br/>
+  </div>
+  <center>
+    <h2>Graphics Projects</h2>
+  </center>
+  <ul class="project-list">
+    <li><a href="post/vikings-robotics-club-branding.html"><img src="thumb/roboticsbranding.png"/>
+        <h3>Vikings Robotics Club Branding</h3>
+        <p>Brand identity development for our Robotics Club</p></a></li>
+    <li><a href="post/rock-4-hope-poster-design.html"><img src="thumb/rock4hope.png"/>
+        <h3>Rock 4 Hope Poster</h3>
+        <p>Informational poster for an NHS community benefit concert</p></a></li>
+    <li><a href="post/international-club-tshirt.html"><img src="thumb/intlshirt.jpg"/>
+        <h3>International Club T Shirt</h3>
+        <p>T Shirt design for our high school international club</p></a></li>
+    <li><a href="post/nhs-tshirt.html"><img src="thumb/nhsshirt.png"/>
+        <h3>National Honor Society T Shirt</h3>
+        <p>T Shirt design for our high school National Honor Society</p></a></li>
+  </ul><br/><br/><br/>
+</body>
+<footer>
+  <script>
+    (function(){
+      var onClickOpenImage = function (event) {
+        window.open(event.target.src, "_self")
+      }
+      var imgs = document.getElementsByTagName("img")
+      for (var i = 0; i < imgs.length; i++)
+        imgs[i].addEventListener("click", onClickOpenImage)
+    })();
+  </script>
+</footer>

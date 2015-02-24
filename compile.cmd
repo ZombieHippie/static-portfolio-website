@@ -1,1 +1,0 @@
-node ./node_modules/jade-to-static/jade-to-static.js --in=./jade --out=./static --port=3000
