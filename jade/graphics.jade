@@ -1,0 +1,13 @@
+extend index.extend
+
+block head-title
+  title Cole Lawrence: Graphics
+
+//-projects = require("projects.cson")
+block body
+  center: h2 Graphics Projects
+  ul.project-list
+    - var typeTest = /graphic/
+    each project in projects
+      if typeTest.exec(project.type) != null
+        +projectTile(project.name, project.slug, project.img, project.desc)
