@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>http://colelawr.com/</loc>
+    <mobile:mobile/>
+    <image:image>
+       <image:loc>http://colelawr.com/images/about/cole-lawrence-square-2014-05-30.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>http://colelawr.com/animations.html</loc>
+    <mobile:mobile/>
+  </url>
+  <url>
+    <loc>http://colelawr.com/graphics.html</loc>
+    <mobile:mobile/>
+  </url>
+  <url>
+    <loc>http://colelawr.com/software.html</loc>
+    <mobile:mobile/>
+  </url>
+</urlset>
