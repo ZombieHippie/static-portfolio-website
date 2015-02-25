@@ -8,7 +8,7 @@ block level
 
 head
   meta(name="viewport" content="width=device-width, initial-scale=1")
-  style img { cursor: pointer }
+  //-style img { cursor: pointer }
   link(href=prefix + "css/site.css" rel="stylesheet")
   block head
 
@@ -31,14 +31,13 @@ body
   br
   br
   br
-
-footer
-  script.
-    (function(){
-      var onClickOpenImage = function (event) {
-        window.open(event.target.src, "_self")
-      }
-      var imgs = document.getElementsByTagName("img")
-      for (var i = 0; i < imgs.length; i++)
-        imgs[i].addEventListener("click", onClickOpenImage)
-    })();
+  footer
+    //-script.
+      (function(){
+        var onClickOpenImage = function (event) {
+          window.open(event.target.src, "_self")
+        }
+        var imgs = document.getElementsByTagName("img")
+        for (var i = 0; i < imgs.length; i++)
+          imgs[i].addEventListener("click", onClickOpenImage)
+      })();
