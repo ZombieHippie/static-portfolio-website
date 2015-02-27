@@ -1,0 +1,29 @@
+extend layout.extend
+
+block head
+  title Cole Lawrence: Code Snippets
+  meta(name="description" content="Code snippets of Cole Lawrence (ZombieHippie).")
+  meta(name="keywords" content="code snippets,web development,portfolio,Cole Lawrence,ZombieHippie,AZombieHippie,Cole R Lawrence")
+  link(href="css/site.css" rel="stylesheet")
+  link(href="css/post.css" rel="stylesheet")
+  link(href="css/code.css" rel="stylesheet")
+
+block body
+  section
+    center: h2 Code Snippets
+    center: p A collection of my favorite snippets I've written for various projects.
+  section
+    h3 droppy
+    p
+      | Node.js dropbox alternative&nbsp;
+      a(href="//github.com/silverwind/droppy") silverwind/droppy
+    .snippet
+      h3.snippet-title.pr
+        span.type Pull Request&nbsp;
+          a(href="https://github.com/silverwind/droppy/pull/25" target="_blank") #25
+        strong &nbsp;&nbsp;&nbsp;Adding Context Menus
+      ul
+        li: a(href="https://github.com/silverwind/droppy/pull/25" target="_blank") conversation
+        li: a(href="https://github.com/silverwind/droppy/pull/25/files" target="_blank") files
+      center: img(src="images/code/droppy/pr25-context-menu-open.png" title="Screenshot of first context menu open with a semi-transparent black backdrop behind the context menu.")
+      center: img(src="images/code/droppy/pr25-context-menu-button.png" title="Screenshot of first context menu open with a semi-transparent black backdrop behind the context menu.")
