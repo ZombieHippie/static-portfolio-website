@@ -1,4 +1,71 @@
 {
+        droppycpclient:"""
+        // Copy a file/folder
+        $("#entry-menu .copy").register("click", function (event) {
+            var entry = $(this).parent("#entry-menu").data("target");
+            droppy.clipboard = ["copy", entry.data("id"), entry.find(".filelink, .folderlink").text()]
+            $("#click-catcher").trigger("click");
+            event.stopPropagation();
+        });
+
+        // Paste a file/folder into a folder
+        $("#entry-menu .paste").register("click", function (event) {
+            if (droppy.socketWait) return;
+            var entry = $(this).parent("#entry-menu").data("target");
+            if(droppy.clipboard){
+                showSpinner();
+                sendMessage("CLIPBOARD", {
+                    "type": droppy.clipboard[0],
+                    "from": droppy.clipboard[1],
+                    "to": entry.data("id") + '/' + droppy.clipboard[2]
+                });
+            } else {
+                throw "Clipboard was empty!"
+            }
+
+            droppy.clipboard = null;
+            $("#click-catcher").trigger("click");
+            event.stopPropagation();
+        });
+        """
+        droppycpserver:"""
+        case "CLIPBOARD":
+            log.log(log.socket(remoteIP, remotePort), msg.data.type + ": " + msg.data.from + " to " + msg.data.to);
+            msg.data.from = addFilePath(msg.data.from);
+            msg.data.to = addFilePath(msg.data.to);
+            checkWatchedDirs();
+            fs.stat(msg.data.from, function (error, stats) {
+                if (stats && !error) {
+                    if (stats.isFile()) {
+                        copyFile(msg.data.from, msg.data.to, function (error) {
+                            if (error) {
+                                log.error("Error copying single file from \\""+msg.data.from+"\\" to \\""+msg.data.from+"\\"");
+                                log.error(error);
+                            } else {
+                                if(msg.data.type === "cut") {
+                                    fs.unlink(msg.data.from, function (error) {
+                                        if (error) log.error(error);
+                                    });
+                                }
+                            }
+                        })
+                    } else if (stats.isDirectory()) {
+                        wrench.copyDirSyncRecursive(msg.data.from, msg.data.to);
+                        if(msg.data.type === "cut") {
+                            try {
+                                wrench.rmdirSyncRecursive(msg.data.from);
+                            } catch (error) {
+                                // Specifically log this error as it possibly has to do with
+                                // wrench not using graceful-fs
+                                log.error("Error applying wrench.rmdirSyncRecursive");
+                                log.error(error);
+                            }
+                        }
+                    }
+                }
+            });
+            break;
+        """
         code1: """
         template <typename T>
         class LinkedList //linked list of Node objects

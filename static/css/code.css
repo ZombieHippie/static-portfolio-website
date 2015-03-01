@@ -1,5 +1,5 @@
 .snippet {
-  margin: 1em 0;
+  margin: 2em 0;
 }
 .snippet>.snippet-title {
   margin: 0 0 1em;
@@ -7,16 +7,19 @@
 }
 .snippet>.snippet-title .type {
   border-radius: 4px;
+  background-color: #444;
 }
 .snippet>.snippet-title .type,
 .snippet>.snippet-title strong {
   display: inline-block;
   padding: .5em;
-  background-color: #444;
 }
-.snippet>.snippet-title,
-.snippet>.snippet-title a {
+.snippet>.snippet-title .type,
+.snippet>.snippet-title .type a {
   color: #f2f2f2;
+}
+.snippet>.snippet-title.al .type {
+  background-color: turquoise;
 }
 .snippet>.snippet-title.pr .type {
   background-color: purple;
@@ -25,7 +28,7 @@
   list-style: none;
 }
 .snippet .code {
-  padding: 20px;
-  background: #f5f5f5;
+  padding: 20px 16px 20px 20px;
+  border-left: #9f0 solid 4px;
   word-wrap: break-word;
 }
