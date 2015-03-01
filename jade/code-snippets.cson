@@ -1,4 +1,16 @@
 {
+        droppyentrymenuclient:"""
+        $(".data-row .options").register("click", function (event) {
+            var entry = $(this).parent();
+            $("#entry-menu").attr("class","in").css({top:entry.offset().top+"px"}).data("target",entry);
+            toggleCatcher();
+            $("#click-catcher").one("mousemove", function() {
+                $("#entry-menu").attr("class", "out");
+                toggleCatcher();
+            });
+            event.stopPropagation();
+        });
+        """
         droppycpclient:"""
         // Copy a file/folder
         $("#entry-menu .copy").register("click", function (event) {
