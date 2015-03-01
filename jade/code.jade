@@ -7,7 +7,9 @@ block head
   link(href="css/site.css" rel="stylesheet")
   link(href="css/post.css" rel="stylesheet")
   link(href="css/code.css" rel="stylesheet")
+  link(href="lib/codemirror-5.0/codemirror.css" rel="stylesheet")
 
+//-code = require("code-snippets.cson")
 block body
   section
     center: h2 Code Snippets
@@ -26,4 +28,32 @@ block body
         li: a(href="https://github.com/silverwind/droppy/pull/25" target="_blank") conversation
         li: a(href="https://github.com/silverwind/droppy/pull/25/files" target="_blank") files
       center: img(src="images/code/droppy/pr25-context-menu-open.png" title="Screenshot of first context menu open with a semi-transparent black backdrop behind the context menu.")
-      center: img(src="images/code/droppy/pr25-context-menu-button.png" title="Screenshot of first context menu open with a semi-transparent black backdrop behind the context menu.")
+      center: img(src="images/code/droppy/pr25-context-menu-button.png" title="Screenshot of context menu button visible.")
+  section
+    h3 Cpp-Algorithms
+    p
+      | I pride my self on eloquent coding, and what better language to prove eloquence than C++ algorithms?&nbsp;
+      a(href="https://github.com/ZombieHippie/Cpp-Algorithms") ZombieHippie/Cpp-Algorithms
+    .snippet
+      h3.snippet-title
+        strong: a(href="https://github.com/ZombieHippie/Cpp-Algorithms/blob/master/SinglyLinkedListInsertionSort") Singly Linked List Insertion Sort
+      p I love this algorithm. It took around 4 hours to write (including the time taken to refractor), but for educational purposes, I did not follow the algorithms of any other Singly Linked List insertion sorts.
+      pre.code.cm-s-default(data-type="text/x-c++src")=code.code1
+      center: img(src="images/code/cpp-algorithms/Insertion-sort-example-300px.gif" title="Graphical example of insertion sort from wikipedia.")
+      center: p
+        | Graphical insertion sort algorithm example from Wikimedia.&nbsp;
+        a(href="http://commons.wikimedia.org/wiki/File:Insertion-sort-example-300px.gif") src
+      pre.code.cm-s-default(data-type="text/x-c++src")=code.code2
+
+block footer
+  script(src="lib/codemirror-5.0/codemirror-runmode-standalone-compressed.js")
+  script(src="lib/codemirror-5.0/codemirror-modes-compressed.js")
+  script.
+    var handleEachCodeBlock = function (element) {
+      var code = element.innerText
+      element.innerHTML = ""
+      CodeMirror.runMode(code, element.dataset.type, element)
+    }
+    var codeBlocks = document.querySelectorAll("pre.code")
+    for (var i = 0; i < codeBlocks.length; i++)
+      handleEachCodeBlock(codeBlocks[i])

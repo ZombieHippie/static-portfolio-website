@@ -1,0 +1,83 @@
+{
+        code1: """
+        template <typename T>
+        class LinkedList //linked list of Node objects
+        {
+        public:
+          LinkedList();
+          LinkedList(LinkedList<T> &linkedList);
+          ~LinkedList();
+          void addToFront(T); //inserts new node before the first node in the list
+          void addToBack(T); //inserts new node after the last node in the list
+          void sort(); //sort the list
+          void print() const; //print out the list
+          T LinkedList<T>::pop(); // remove first element and return
+          LLIterator<T> getIterator() const; // get a standarad iterator that behaves like a Java iterator.
+        private:
+          Node<T>* insertNodeAfter(Node<T>* before, Node<T>* between); // Inserts `between` after `before` and returns that node which was after `between`
+          Node<T>* insertStart(Node<T>* newStart); // Inserts `newStart` at start, while setting `newStart->nextPtr` to `start`, and returns that node which was after `newStart`
+          Node<T> *startPtr; //stores the pointer of first object in the linked list
+          bool isEmpty() const; //utility functions used to see if the list contains no elements
+        };
+        """
+        code2: """
+        template <typename T>
+        void LinkedList<T>::sort() {
+          if (!isEmpty()) {
+            LLIterator<T> eachUnsortedIt = getIterator();
+            // Use to keep track of end of sorted list
+            Node<T> *lastSortedNode = NULL;
+
+            // Initiallize lastUnsortedNode with first node
+            if (eachUnsortedIt.hasNext())
+              lastSortedNode = eachUnsortedIt.next();
+
+            while (eachUnsortedIt.hasNext()) {
+              // The node that we are inserting in new spot
+              Node<T> *placingNode = eachUnsortedIt.next();
+
+              // Link the nodes after placingNode to the lastSortedNode
+              lastSortedNode->nextPtr = placingNode->nextPtr;
+
+              // "Detach" placingNode from other nodes
+              placingNode->nextPtr = NULL; // Unecessary
+
+              Node<T> *currSortedNode = NULL; // Use to compare for sort
+              Node<T> *prevSortedNode = NULL; // Node before currSortedNode
+              LLIterator<T> eachSortedIt = getIterator();
+
+              while (eachSortedIt.hasNext()) {
+                // Keep track of nodes in case we have to insert in the place before currSortedNode
+                prevSortedNode = currSortedNode;
+                currSortedNode = eachSortedIt.next();
+
+                if (currSortedNode->elem > placingNode->elem) {
+                  // placingNode belongs before the currSortedNode element
+                  if (prevSortedNode == NULL) {
+                    // if prevSortedNode is NULL, then there is no other Node before currSortedNode
+                    // therefore we need to place placingNode at the start.
+                    insertStart(placingNode);
+                  }
+                  else {
+                    // place placingNode after prevSortedNode
+                    insertNodeAfter(prevSortedNode, placingNode);
+                  }
+                  break;
+                }
+                else if (currSortedNode == lastSortedNode) {
+                  // insert node at end of sorted list (same spot)
+                  // place placingNode after lastSortedNode
+                  insertNodeAfter(lastSortedNode, placingNode);
+
+                  // Now the lastSortedNode is the node we just placed
+                  lastSortedNode = placingNode;
+                  break;
+                }
+              }
+              // Next node to be sorted is node that was after placingNode
+              // Note that if the Node after lastSortedNode is NULL, then the loop should cease
+              eachUnsortedIt.setNext(lastSortedNode->nextPtr);
+            }
+          }
+        }"""
+}

@@ -1,7 +1,5 @@
 .snippet {
   margin: 1em 0;
-  padding: 20px;
-  background: #f5f5f5;
 }
 .snippet>.snippet-title {
   margin: 0 0 1em;
@@ -14,8 +12,9 @@
 .snippet>.snippet-title strong {
   display: inline-block;
   padding: .5em;
+  background-color: #444;
 }
-.snippet>.snippet-title .type,
+.snippet>.snippet-title,
 .snippet>.snippet-title a {
   color: #f2f2f2;
 }
@@ -24,4 +23,9 @@
 }
 .snippet ul {
   list-style: none;
+}
+.snippet .code {
+  padding: 20px;
+  background: #f5f5f5;
+  word-wrap: break-word;
 }
