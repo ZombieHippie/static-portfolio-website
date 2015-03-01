@@ -1,0 +1,11 @@
+{
+  "foxtrot": """
+  class Particle
+    constructor: (@world, @wx, @wy, @life) ->
+      @wx += - @life/2 + 4 - Math.floor(Math.random()*9)
+      @wy += - @life/2 + 4 - Math.floor(Math.random()*9)
+    draw: ->
+      @world.ctx.fillRect(@world.getCX(@wx),@world.getCY(@wy),@life,@life)
+      @life -= .5
+  """
+}
