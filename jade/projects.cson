@@ -29,6 +29,12 @@
     desc: "A combination of libraries are used to create this mobile friendly, unique, User-Experience"
     type: "software"
   ,
+    name: "Java Breakout Game"
+    slug:  "java-breakout-game"
+    img:  "java-breakout-game.png"
+    desc: "This game was made in 5 hours when I was relearning Java syntax before starting Java Intro class in High School."
+    type: "software"
+  ,
     name: "Foxtrot HTML5 Game"
     slug:  "foxtrot-html5-game"
     img:  "foxtrot.gif"
