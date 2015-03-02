@@ -1,0 +1,15 @@
+extend index.extend
+
+block head-title
+  title Cole Lawrence: Graphics and Animations
+  meta(name="description" content="Animations made by Cole Lawrence (ZombieHippie)")
+  meta(name="keywords" content="Cole Lawrence,Animation,3D Animation,Art,ZombieHippie,AZombieHippie,Cole R Lawrence")
+
+//-projects = require("projects.cson")
+block body
+  center: h2 Graphics and Animation Projects
+  ul.project-list
+    - var typeTest = /animation|graphic/
+    each project in projects
+      if typeTest.exec(project.type) != null
+        +projectTile(project.name, project.slug, project.img, project.desc)
