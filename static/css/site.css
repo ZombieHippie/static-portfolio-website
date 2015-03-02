@@ -8,6 +8,6 @@ section.page-content {
   max-width: 38rem;
   margin: 0 auto;
 }
-header.mast-head { text-align: center }
+header.mast-head, footer { text-align: center }
 header.mast-head a img { width: 5rem; height: 5rem; border-radius: 2.5rem; }
 header.mast-head nav { margin-top: 2rem; }

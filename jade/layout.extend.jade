@@ -21,14 +21,6 @@ body
       a(href=prefix + "index.html" title="home page")
         h1 Cole Lawrence
         img(src=prefix + "images/about/cole-lawrence-square-2014-05-30.jpg")
-      nav
-        a(href=prefix + "animations.html") Animations
-        | &nbsp; - &nbsp;
-        a(href=prefix + "software.html") Software
-        | &nbsp; - &nbsp;
-        a(href=prefix + "graphics.html") Graphics
-        | &nbsp; - &nbsp;
-        a(href=prefix + "code.html") Code Snippets
       br
     section.page-content
       block body
@@ -36,6 +28,18 @@ body
   br
   br
   footer
+    nav
+      a(href=prefix + "animations.html") Animations
+      | &nbsp; - &nbsp;
+      a(href=prefix + "software.html") Software
+      | &nbsp; - &nbsp;
+      a(href=prefix + "graphics.html") Graphics
+      | &nbsp; - &nbsp;
+      a(href=prefix + "code.html") Code Snippets
+    br
+    br
+    br
+
     //-script.
       (function(){
         var onClickOpenImage = function (event) {
