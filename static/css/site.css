@@ -10,4 +10,18 @@ section.page-content {
 }
 header.mast-head, footer { text-align: center }
 header.mast-head a img { width: 5rem; height: 5rem; border-radius: 2.5rem; }
-header.mast-head nav { margin-top: 2rem; }
+
+header.mast-head nav ul {
+  list-style: none;
+  padding: 0;
+}
+header.mast-head nav {
+  max-height: 0rem; overflow: hidden;
+  -webkit-transition: max-height .4s;
+  transition: max-height .4s;
+}
+header.mast-head nav ul li a {
+  display: inline-block;
+  padding: .5em;
+}
+header.mast-head:target nav { max-height: 20rem; }

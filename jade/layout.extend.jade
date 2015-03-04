@@ -14,36 +14,42 @@ head
   link(href=prefix + "css/site.css" rel="stylesheet")
   block head
 
-mixin navigation
-  nav
-    a(href=prefix + "graphics-and-animations.html") Graphics and Animations
-    | &nbsp; - &nbsp;
-    a(href=prefix + "software.html") Software
-    //-| &nbsp; - &nbsp;
-    //-a(href=prefix + "graphics.html") 
-    | &nbsp; - &nbsp;
-    a(href=prefix + "code.html") Code Snippets
-  
-
 body
   article
-    header.mast-head
-      a(href=prefix + "index.html" title="home page")
-        h1 Cole Lawrence
+    header.mast-head(id="navigation")
+      h1 Cole Lawrence
+      a(href=prefix + "index.html" title="Cole Lawrence's front page")
         img(src=prefix + "images/about/cole-lawrence-square-2014-05-30.jpg")
       br
-      +navigation
+      br
+      a(href="#" data-t="#navigation" onclick="var tmp=this.href; this.href=this.dataset.t;this.dataset.t=tmp;")
+        | Navigation
+      nav
+        ul
+          li: a(href=prefix + "index.html") home
+          li: a(href=prefix + "animations.html") animations
+          li: a(href=prefix + "graphic-design.html") graphic designs
+          li: a(href=prefix + "software.html") software
+          li: a(href=prefix + "code.html") code snippets.
+      br
+      br
     section.page-content
       block body
   br
   br
   br
   footer
-    +navigation
+    //-nav
+      | Cole Lawrence's portfolio of&nbsp;
+      a(href=prefix + "animations.html") animations
+      | ,&nbsp;
+      a(href=prefix + "graphic-design.html") graphic designs
+      | ,&nbsp;
+      a(href=prefix + "software.html") software
+      | , and&nbsp;
+      a(href=prefix + "code.html") code snippets.
     br
     br
-    br
-
     //-script.
       (function(){
         var onClickOpenImage = function (event) {

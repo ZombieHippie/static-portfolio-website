@@ -7,9 +7,9 @@ block head-title
 
 //-projects = require("projects.cson")
 block body
-  center: h2 Animation and Graphic Design
+  center: h2 Graphic Design
   ul.project-list
-    - var typeTest = /animation|graphic/
+    - var typeTest = /graphic/
     each project in projects
       if typeTest.exec(project.type) != null
         +projectTile(project.name, project.slug, project.img, project.desc)
