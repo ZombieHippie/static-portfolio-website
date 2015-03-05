@@ -26,44 +26,46 @@ header.mast-head nav ul li a {
   display: inline-block;
   padding: .5em;
 }
-
 header .navigation-toggle {
+  padding: .5rem;
   position: fixed;
   right: .5rem; top: .5rem;
-  padding: .5rem;
-  display: inline-block;
+} 
+header .navigation-icon {
+  position: relative;
+  display: block;
   width: 1.4rem; height: 1.25rem;
   border-radius: .25rem;
   background-color: whitesmoke;/*#E0B9BD*/;
 }
-header .navigation-toggle>span {
-  margin-top:.25rem;
-  height: .25rem;
-  width: 1.4rem;
-  display: inline-block;
+header .navigation-icon>span {
+  height: 20%;
+  width: 100%;
+  display: block;
+  position: absolute;
   background: dodgerblue;/*#4F1831*/
 }
-header .navigation-toggle>span:first-child {
-  margin-top:0;
-}
+.navigation-icon>span:nth-child(1) {top:0;}
+.navigation-icon>span:nth-child(2) {top:40%;}
+.navigation-icon>span:nth-child(3) {top:80%;}
 
-header.mast-head .navigation-toggle>span {
+header.mast-head .navigation-icon>span {
   -webkit-transform: rotateZ(0deg);
   transform: rotateZ(0deg);
   transition: all .5s;
 }
-header.mast-head:target .navigation-toggle>span:nth-child(1) {
+header.mast-head:target .navigation-icon>span:nth-child(1) {
   background:red;
   -webkit-transform: rotateZ(0deg);
   transform: rotateZ(45deg);
-  margin-top: .5rem;
+  top: 40%;
 }
-header.mast-head:target .navigation-toggle>span:nth-child(2) {
+header.mast-head:target .navigation-icon>span:nth-child(2) {
   background:transparent;
 }
-header.mast-head:target .navigation-toggle>span:nth-child(3) {
+header.mast-head:target .navigation-icon>span:nth-child(3) {
   background:red;
-  margin-top: -.75rem;
+  top: 40%;
   -webkit-transform: rotateZ(-45deg);
   transform: rotateZ(-45deg);
 }

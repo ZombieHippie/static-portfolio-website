@@ -23,9 +23,10 @@ body
       br
       br
       a.navigation-toggle(href="#" data-t="#navigation" onclick="var tmp=this.href; this.href=this.dataset.t;this.dataset.t=tmp;")
-        span
-        span
-        span
+        .navigation-icon
+          span
+          span
+          span
       nav
         ul
           li: a(href=prefix + "index.html") home
