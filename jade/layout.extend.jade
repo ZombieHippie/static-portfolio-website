@@ -22,8 +22,8 @@ body
         img(src=prefix + "images/about/cole-lawrence-square-2014-05-30.jpg")
       br
       br
-      a(href="#" data-t="#navigation" onclick="var tmp=this.href; this.href=this.dataset.t;this.dataset.t=tmp;")
-        | Navigation
+      a.navigation-toggle(href="#" data-t="#navigation" onclick="var tmp=this.href; this.href=this.dataset.t;this.dataset.t=tmp;")
+        | Open Navigation
       nav
         ul
           li: a(href=prefix + "index.html") home
