@@ -1,21 +1,18 @@
 html { font-family: sans-serif }
 body {
-  padding: 0 24px;
-  margin-left: auto;
-  margin-right: auto;
+  padding: 0 1rem;
+  margin: 0 auto;
 }
 section.page-content {
   max-width: 38rem;
   margin: 0 auto;
 }
-a {color: black }
-a:visited {color: #111;}
+a {color: dodgerblue;/*#4F1831*/ }
+a:visited {color: dodgerblue;/*#6F2151*/}
 header.mast-head, footer { text-align: center }
 header.mast-head a img { width: 5rem; height: 5rem; border-radius: 2.5rem; }
-header .navigation-toggle { display: inline-block; padding: .5rem 1rem;
-  border: .1rem solid darkslategray; border-radius: .25rem;
-  color: black; text-decoration: none;}
-
+header.mast-head { padding-top: 0;}
+header.mast-head h1 {margin: 0; padding: 1rem; display: block}
 header.mast-head nav ul {
   list-style: none;
   padding: 0;
@@ -29,5 +26,46 @@ header.mast-head nav ul li a {
   display: inline-block;
   padding: .5em;
 }
+
+header .navigation-toggle {
+  position: fixed;
+  right: .5rem; top: .5rem;
+  padding: .5rem;
+  display: inline-block;
+  width: 1.4rem; height: 1.25rem;
+  border-radius: .25rem;
+  background-color: whitesmoke;/*#E0B9BD*/;
+}
+header .navigation-toggle>span {
+  margin-top:.25rem;
+  height: .25rem;
+  width: 1.4rem;
+  display: inline-block;
+  background: dodgerblue;/*#4F1831*/
+}
+header .navigation-toggle>span:first-child {
+  margin-top:0;
+}
+
+header.mast-head .navigation-toggle>span {
+  -webkit-transform: rotateZ(0deg);
+  transform: rotateZ(0deg);
+  transition: all .5s;
+}
+header.mast-head:target .navigation-toggle>span:nth-child(1) {
+  background:red;
+  -webkit-transform: rotateZ(0deg);
+  transform: rotateZ(45deg);
+  margin-top: .5rem;
+}
+header.mast-head:target .navigation-toggle>span:nth-child(2) {
+  background:transparent;
+}
+header.mast-head:target .navigation-toggle>span:nth-child(3) {
+  background:red;
+  margin-top: -.75rem;
+  -webkit-transform: rotateZ(-45deg);
+  transform: rotateZ(-45deg);
+}
+
 header.mast-head:target nav { max-height: 20rem; }
-header.mast-head:target .navigation-toggle { background-color: whitesmoke; }
