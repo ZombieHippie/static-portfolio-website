@@ -28,8 +28,9 @@ header.mast-head nav ul li a {
 }
 header .navigation-toggle {
   padding: .5rem;
-  position: fixed;
-  right: .5rem; top: .5rem;
+/*  position: fixed;
+  right: .5rem; top: .5rem;*/
+  display: inline-block;
   background-color: whitesmoke;
   border-radius: .25rem;
 } 
