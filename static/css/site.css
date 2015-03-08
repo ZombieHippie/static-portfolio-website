@@ -1,7 +1,7 @@
 html { font-family: sans-serif }
 body {
   padding: 0 1rem;
-  margin: 0 auto;
+  margin: 0;
 }
 section.page-content {
   max-width: 38rem;
@@ -19,8 +19,8 @@ header.mast-head nav ul {
 }
 header.mast-head nav {
   max-height: 0rem; overflow: hidden;
-  -webkit-transition: max-height .4s;
-  transition: max-height .4s;
+  /*-webkit-transition: max-height .2s ease-out;
+  transition: max-height .2s ease-out;*/
 }
 header.mast-head nav ul li a {
   display: inline-block;
@@ -28,11 +28,10 @@ header.mast-head nav ul li a {
 }
 header .navigation-toggle {
   padding: .5rem;
-/*  position: fixed;
-  right: .5rem; top: .5rem;*/
   display: inline-block;
   background-color: whitesmoke;
   border-radius: .25rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.6)
 } 
 header .navigation-icon {
   position: relative;
