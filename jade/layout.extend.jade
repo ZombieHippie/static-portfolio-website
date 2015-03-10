@@ -22,19 +22,20 @@ body
         img(src=prefix + "images/about/cole-lawrence-square-2014-05-30.jpg")
       br
       br
-      a.navigation-toggle(href="#" data-t="#navigation" onclick="var tmp=this.href; this.href=this.dataset.t;this.dataset.t=tmp;")
-        .navigation-icon
-          span
-          span
-          span
-      div.nav-links
-        nav
-          ul
-            li: a(href=prefix + "index.html") home
-            li: a(href=prefix + "animations.html") animations
-            li: a(href=prefix + "graphic-design.html") graphic designs
-            li: a(href=prefix + "software.html") software
-            li: a(href=prefix + "code.html") code snippets.
+      .navigation-menu
+        a.navigation-toggle(href="#" data-t="#navigation" onclick="var tmp=this.href; this.href=this.dataset.t;this.dataset.t=tmp;")
+          .navigation-icon
+            span
+            span
+            span
+        .nav-links
+          nav
+            ul
+              li: a(href=prefix + "index.html") home
+              li: a(href=prefix + "animations.html") animations
+              li: a(href=prefix + "graphic-design.html") graphic designs
+              li: a(href=prefix + "software.html") software
+              li: a(href=prefix + "code.html") code snippets.
       br
       br
     section.page-content

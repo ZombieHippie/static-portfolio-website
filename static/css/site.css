@@ -72,5 +72,5 @@ header.mast-head:target
   -webkit-transform: rotateZ(-45deg);
   transform: rotateZ(-45deg);
 }
-
+.navigation-menu:hover nav { max-height: 20rem; }
 header.mast-head:target nav { max-height: 20rem; }
