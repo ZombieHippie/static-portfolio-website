@@ -26,13 +26,17 @@ header.mast-head nav ul li a {
   display: inline-block;
   padding: .5em;
 }
+header .navigation-menu {
+  max-width: 20rem;
+  margin: 0 auto;
+}
 header .navigation-toggle {
   padding: .5rem;
   display: inline-block;
   background-color: whitesmoke;
   border-radius: .25rem;
   box-shadow: 0 1px 3px rgba(0,0,0,0.6)
-} 
+}
 header .navigation-icon {
   position: relative;
   display: block;
