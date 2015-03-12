@@ -3,18 +3,21 @@
   xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0"
   xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>http://colelawr.com/</loc>
+    <loc>http://colelawrence.com/</loc>
     <mobile:mobile/>
     <image:image>
-       <image:loc>http://colelawr.com/images/about/cole-lawrence-square-2014-05-30.jpg</image:loc>
+       <image:loc>http://colelawrence.com/images/about/cole-lawrence-square-2014-05-30.jpg</image:loc>
+    </image:image>
+    <image:image>
+       <image:loc>http://colelawrence.com/images/about/cole-lawrence-arizona-landscape-2014-01-19.jpg</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>http://colelawr.com/animations.html</loc>
+    <loc>http://colelawrence.com/animations.html</loc>
     <mobile:mobile/>
   </url>
   <url>
-    <loc>http://colelawr.com/graphics.html</loc>
+    <loc>http://colelawrence.com/graphic-design.html</loc>
     <mobile:mobile/>
   </url>
   <url>

@@ -1,6 +1,6 @@
 User-agent: *
 Disallow: /thumb/
-Sitemap: http://colelawr.com/sitemap.xml
+Sitemap: http://colelawrence.com/sitemap.xml
 
 # based on www.robotstxt.org/robots.txt
 
