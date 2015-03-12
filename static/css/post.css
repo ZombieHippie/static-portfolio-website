@@ -15,3 +15,7 @@ center>img {
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
   border: solid #dbdbdb 3px;
 }
+
+table {width:100%;}
+table tr td:first-child,
+table tr td:last-child { text-align:center; width: 5rem;}

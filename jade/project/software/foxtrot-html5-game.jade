@@ -1,4 +1,7 @@
-extend software-post.extend
+extend ../project.extend
+
+//-projects = require("../../projects.cson")
+//-category = require("./folder.json")
 
 block head-title
   title Cole Lawrence - Foxtrot HTML5 Game
@@ -9,7 +12,7 @@ block head-title
 
 block post-body
   h2 Foxtrot HTML5 Game
-  center: img(src="../images/foxtrot/foxtrot-screenshot.jpg" title="In-game screenshot of fox jumping off to the right.")
+  center: img(src=prefix + "images/foxtrot/foxtrot-screenshot.jpg" title="In-game screenshot of fox jumping off to the right.")
   p This game is built with CoffeeScript to resemble another popular game known as Doodle-jump.
   p This was my first experience using class-like data structures in "JavaScript".
   .snippet
@@ -20,8 +23,8 @@ block post-body
     center: strong: a(href="http://zombiehippie.github.io/TheFoxtrot/" title="Play Foxtrot game in this browser" ) Open the foxtrot game
 
 block footer
-  script(src="../lib/codemirror-5.0/codemirror-runmode-standalone-compressed.js")
-  script(src="../lib/codemirror-5.0/codemirror-modes-compressed.js")
+  script(src=prefix + "lib/codemirror-5.0/codemirror-runmode-standalone-compressed.js")
+  script(src=prefix + "lib/codemirror-5.0/codemirror-modes-compressed.js")
   script.
     var handleEachCodeBlock = function (element) {
       var code = element.innerText

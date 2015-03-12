@@ -1,4 +1,7 @@
-extend software-post.extend
+extend ../project.extend
+
+//-projects = require("../../projects.cson")
+//-category = require("./folder.json")
 
 block head-title
   title Cole Lawrence - FreeSketch Collaborative Drawing
@@ -6,7 +9,7 @@ block head-title
 block post-body
   h2 FreeSketch Collaborative Drawing
   p This webapp uses nodejs in combination with websockets and CoffeeScript to create a fun collaborative sketching canvas.
-  center: img(src="../images/freesketch-game/freesketch-screenshot.jpg" title="Desktop screenshot showing how the drawings made by two different people are communicated between the different clients connected to the game.")
+  center: img(src=prefix + "images/freesketch-game/freesketch-screenshot.jpg" title="Desktop screenshot showing how the drawings made by two different people are communicated between the different clients connected to the game.")
   p
     | You can press&nbsp;
     code space

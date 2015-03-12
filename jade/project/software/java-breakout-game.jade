@@ -1,4 +1,7 @@
-extend software-post.extend
+extend ../project.extend
+
+//-projects = require("../../projects.cson")
+//-category = require("./folder.json")
 
 block head-title
   title Cole Lawrence - Java Breakout Game
@@ -6,7 +9,7 @@ block head-title
 block post-body
   h2 Java Breakout Game
   center
-    img(src="../images/java-breakout-game/java-breakout-game-screenshot.png" title="In-game screenshot of beginning breakout stage.")
+    img(src=prefix + "images/java-breakout-game/java-breakout-game-screenshot.png" title="In-game screenshot of beginning breakout stage.")
   p This is a really simple game  that I made overnight (5 hours) to prepare for my Honors Java class. At one point or another, I've felt that I've known Java inside and out, but before doing this project, I had not experimented with applets or the Graphics class. So, I feel I’ve learned a little bit more about that, and was happily surprised that Audio implementation was really easy.
   p If I return to this project I will be reworking the collision testing code because it is not entirely thought through and does not take into account the direction the blip came from to provide a better decision as to whether it collided a horizontal wall or vertical wall.
   br

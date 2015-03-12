@@ -1,0 +1,42 @@
+extend ../layout.extend
+
+block level
+  - var level = 2
+
+mixin projectnav(slug)
+  - var projectsOfCategory = projects[category.slug]
+  - var prevPost, nextPost;
+  - var lastIndex = projectsOfCategory.length-1;
+  - projectsOfCategory.forEach(function (project, index) {
+    -if(project.slug == slug) {
+    -   prevPost=projectsOfCategory[index==0?lastIndex:index-1]
+    -   nextPost=projectsOfCategory[index==lastIndex?0:index+1]
+    -   return false;
+    -}
+  - });
+  table
+    tr
+      td: a(href=prevPost.slug + ".html")
+        span previous
+        br
+        br
+        img.icon(src=prefix + "thumb/" + prevPost.img)
+      td
+      td: a(href=nextPost.slug + ".html")
+        span next
+        br
+        br
+        img.icon(src=prefix + "thumb/" + nextPost.img)
+
+block head
+  link(href=prefix + "css/post.css" rel="stylesheet")
+  block head-title
+
+block body
+  a(href="index.html"): h3="< " + category.name
+  block post-body
+  br
+  br
+  br
+  - var slug = filename.match(/([^\/\\]+)\.jade$/)[1]
+  +projectnav(slug, category.slug)

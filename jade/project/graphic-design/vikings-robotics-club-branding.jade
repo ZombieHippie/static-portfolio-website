@@ -1,4 +1,7 @@
-extend graphic-design-post.extend
+extend ../project.extend
+
+//-projects = require("../../projects.cson")
+//-category = require("./folder.json")
 
 block head-title
   title Cole Lawrence - Vikings Robotics Club Branding
@@ -7,6 +10,6 @@ block post-body
   h2 Vikings Robotics Club Branding
   p A fun logo design and an identifiable name I developed for our Shawnee Mission West robotics club. These business cards would provide our members more networking opportunities and may have allowed us to look more professional for potential sponsors.
   center
-    img(src="../images/robotics-club-branding/business-cards-poster.png")
-    img(src="../images/robotics-club-branding/viking-robotics-card-horizontal.png")
-    img(src="../images/robotics-club-branding/viking-robotics-card-vertical.png")
+    img(src=prefix + "images/robotics-club-branding/business-cards-poster.png")
+    img(src=prefix + "images/robotics-club-branding/viking-robotics-card-horizontal.png")
+    img(src=prefix + "images/robotics-club-branding/viking-robotics-card-vertical.png")

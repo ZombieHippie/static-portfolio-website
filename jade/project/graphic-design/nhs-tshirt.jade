@@ -1,4 +1,7 @@
-extend graphic-design-post.extend
+extend ../project.extend
+
+//-projects = require("../../projects.cson")
+//-category = require("./folder.json")
 
 block head-title
   title Cole Lawrence - National Honor Society T Shirt
@@ -7,4 +10,4 @@ block post-body
   h2 National Honor Society T Shirt
   p A silly brain with the NHS letters in the middle.
   center
-    img(src="../images/nhs-shirt/NHS-Brain-present.png")
+    img(src=prefix + "images/nhs-shirt/NHS-Brain-present.png")
