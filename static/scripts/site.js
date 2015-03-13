@@ -32,19 +32,21 @@ function HTMLParser(anHTMLString) {
 // open pages here with transitions
 function openPage(path, skipPushState) {
   getRequest(path, function (error, dom) {
-    if (error){
+    if (error) {
       window.location.href = path // Manually open page  
     } else {
-      var swapPage = document.getElementById("page-content")
+      var swapPage = document.getElementById("swap-page")
+      var swapNav = document.getElementById("swap-nav")
       // title
       var titleText = dom.querySelector("title").innerText
       document.querySelector("title").innerText = titleText
       // page-content html
-      swapPage.innerHTML = dom.getElementById("page-content").innerHTML
+      swapPage.innerHTML = dom.getElementById("swap-page").innerHTML
       // nav-links html
-      document.getElementById("nav-links").innerHTML = dom.getElementById("nav-links").innerHTML
+      swapNav.innerHTML = dom.getElementById("swap-nav").innerHTML
       // listen on new anchors
       attachListeners(swapPage)
+      attachListeners(swapNav)
 
       if (!skipPushState)
         history.pushState({path:path}, titleText, path)
@@ -76,6 +78,9 @@ function attachListeners (domEl) {
 window.onpopstate = function (event) {
   if (event.state != null && typeof event.state.path === "string")
     openPage(event.state.path, true)
+
+  else
+    openPage(window.location.pathname, true)
 }
 
 // Initiallize page-type

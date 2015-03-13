@@ -19,8 +19,7 @@ body
   article
     header.mast-head(id="navigation")
       h1 Cole Lawrence
-      a(href=prefix + "index.html" title="Cole Lawrence's front page")
-        img.icon(src=prefix + "images/about/cole-lawrence-square-2014-05-30.jpg")
+      img.icon(src=prefix + "images/about/cole-lawrence-square-2014-05-30.jpg")
       br
       br
       .navigation-menu
@@ -29,7 +28,7 @@ body
             span
             span
             span
-        .nav-links#nav-links
+        .nav-links#swap-nav
           nav
             ul
               li: strong NAVIGATION
@@ -39,7 +38,7 @@ body
               li: a(href=prefix + "project/software/index.html") software
               li: a(href=prefix + "code.html") code snippets
       br
-    section.page-content#page-content
+    section.page-content#swap-page
       block body
   br
   br
