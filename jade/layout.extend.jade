@@ -31,12 +31,12 @@ body
         .nav-links
           nav
             ul
-              li: a(href=prefix + "index.html") home
+              li: strong NAVIGATION
+              li: a(href=prefix + "index.html") about
               li: a(href=prefix + "project/animation/index.html") animations
               li: a(href=prefix + "project/graphic-design/index.html") graphic designs
               li: a(href=prefix + "project/software/index.html") software
               li: a(href=prefix + "code.html") code snippets
-      br
       br
     section.page-content
       block body
@@ -44,25 +44,5 @@ body
   br
   br
   footer
-    //-nav
-      | Cole Lawrence's portfolio of&nbsp;
-      a(href=prefix + "animations.html") animations
-      | ,&nbsp;
-      a(href=prefix + "graphic-design.html") graphic designs
-      | ,&nbsp;
-      a(href=prefix + "software.html") software
-      | , and&nbsp;
-      a(href=prefix + "code.html") code snippets.
-    br
-    br
-    //-script.
-      (function(){
-        var onClickOpenImage = function (event) {
-          window.open(event.target.src, "_self")
-        }
-        var imgs = document.getElementsByTagName("img")
-        for (var i = 0; i < imgs.length; i++)
-          imgs[i].addEventListener("click", onClickOpenImage)
-      })();
     script(src=prefix + "lib/modernizr-2.8.3/no-touch.js")
     block footer
