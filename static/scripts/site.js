@@ -40,9 +40,9 @@ function openPage(path, skipPushState) {
       // title
       var titleText = dom.querySelector("title").innerText
       document.querySelector("title").innerText = titleText
-      // page-content html
+      // swap-page html
       swapPage.innerHTML = dom.getElementById("swap-page").innerHTML
-      // nav-links html
+      // swap-nav html
       swapNav.innerHTML = dom.getElementById("swap-nav").innerHTML
       // listen on new anchors
       attachListeners(swapPage)
