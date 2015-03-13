@@ -99,3 +99,130 @@ header.mast-head:target
 /* modernizr */
 .no-touch .navigation-menu:hover nav,
 header.mast-head:target nav { max-height: 20rem; margin-top: 1rem;}
+
+
+/******************
+ * Index pages
+ */
+
+ul.project-list {
+  list-style: none;
+  text-align: center;
+  padding: 0;
+}
+
+ul.project-list li {
+  display: inline-block;
+}
+
+ul.project-list li a {
+  width: 240px;
+  height: 300px;
+  padding: 20px;
+  display: inline-block;
+}
+@media screen {
+ul.project-list li a { height: 240px; }
+ul.project-list li a p,
+ul.project-list li a h3 { display: none; }
+}
+ul.project-list h3 {
+  margin: 0;
+}
+ul.project-list p {
+  margin: 0;
+  height: 60px;
+  display: block;
+  scroll-y: auto;
+}
+ul.project-list img {
+  height: 240px;
+  width: 240px;
+}
+
+
+/******************
+ * Post pages
+ */
+
+/* "< Animation" link */
+a.index-link {
+text-decoration: none;
+font-weight: bold;
+font-size: 1.3rem;
+}
+a.index-link>* {
+margin:0;
+}
+
+/* Images */
+.post-body center>img {
+  max-height: 80vh;
+  max-width: 100%;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  border: solid #dbdbdb 3px;
+}
+
+/* Next and previous projects */
+table {width:100%;}
+table tr td:first-child,
+table tr td:last-child {
+  text-align:center;
+  width: 5rem;
+  pointer-events: all;
+}
+.page-content {
+  position: relative;
+}
+@media only screen and (min-width: 50rem) { /*38 + 1 * 2 + 5 * 2 */
+  table {
+    position: absolute;
+    left: 50%;
+    top: 10rem;
+    width: 50rem;
+    margin-left: -25rem;
+    margin-top: -10rem;
+  }
+  table, table tr, table tr td:nth-child(2){
+    pointer-events: none;
+  }
+}
+
+/**************
+ * Code snippets
+ */
+.snippet {
+  margin: 2em 0;
+}
+.snippet>.snippet-title {
+  margin: 0 0 1em;
+  font-size: 1rem;
+}
+.snippet>.snippet-title .type {
+  border-radius: 4px;
+  background-color: #444;
+}
+.snippet>.snippet-title .type,
+.snippet>.snippet-title strong {
+  display: inline-block;
+  padding: .5em;
+}
+.snippet>.snippet-title .type,
+.snippet>.snippet-title .type a {
+  color: #f2f2f2;
+}
+.snippet>.snippet-title.al .type {
+  background-color: turquoise;
+}
+.snippet>.snippet-title.pr .type {
+  background-color: purple;
+}
+.snippet ul {
+  list-style: none;
+}
+.snippet .code {
+  padding: 20px 16px 20px 20px;
+  border-left: #9f0 solid 4px;
+  word-wrap: break-word;
+}

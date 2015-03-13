@@ -29,12 +29,13 @@ mixin projectnav(slug)
         img.icon(src=prefix + "thumb/" + nextPost.img)
 
 block head
-  link(href=prefix + "css/post.css" rel="stylesheet")
+  meta(id="page-type" data-type="project")
   block head-title
 
 block body
-  a(href="index.html"): h3="< " + category.name
-  block post-body
+  a.index-link(href="index.html"): h3="< " + category.name
+  .post-body
+    block post-body
   br
   br
   br
