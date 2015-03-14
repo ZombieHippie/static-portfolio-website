@@ -85,6 +85,8 @@ function openPage(path, skipPushState) {
         setTimeout( function () {
           Buffer.flush()
           swapPage.style.visibility = "visible"
+          // from layout
+          onSwapLoad()
         }, 10)
       }
       function handleImgLoad () {
@@ -103,9 +105,6 @@ function openPage(path, skipPushState) {
       // listen on new anchors
       attachListeners(swapNav)
       attachListeners(swapPage)
-
-      // from layout
-      //onSwapLoad()
 
       if (!skipPushState)
         history.pushState({path:path}, titleText, path)

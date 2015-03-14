@@ -56,10 +56,10 @@ body
         CodeMirror.runMode(code, element.dataset.type, element)
       }
 
-      var onSwapLoad = function () {
+      this.onSwapLoad = function () {
         var codeBlocks = document.querySelectorAll("pre.code")
         for (var i = 0; i < codeBlocks.length; i++)
           handleEachCodeBlock(codeBlocks[i])
       }
-      onSwapLoad()
+      this.onSwapLoad()
     block footer
