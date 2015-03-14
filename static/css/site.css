@@ -190,13 +190,13 @@ table tr td:last-child {
 .page-content {
   position: relative;
 }
-@media only screen and (min-width: 50rem) { /*38 + 1 * 2 + 5 * 2 */
+@media only screen and (min-width: 54rem) { /*38 + 1 * 2 + 5 * 2 + 2 * 2 */
   table {
     position: absolute;
     left: 50%;
     top: 10rem;
-    width: 50rem;
-    margin-left: -25rem;
+    width: 54rem;
+    margin-left: -27rem;
     margin-top: -10rem;
   }
   table, table tr, table tr td:nth-child(2){
