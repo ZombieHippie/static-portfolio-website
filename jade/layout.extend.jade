@@ -22,8 +22,8 @@ body
       img.icon(src=prefix + "images/about/cole-lawrence-square-2014-05-30.jpg")
       br
       br
-      .navigation-menu
-        a.navigation-toggle.btn(href="#" data-t="#navigation" onclick="var tmp=this.href; this.href=this.dataset.t;this.dataset.t=tmp;")
+      .navigation-menu(data-open="0")
+        a.navigation-toggle.btn(onclick="var d=this.parentNode.dataset; d.open=d.open==='0'?'1':'0';")
           .navigation-icon
             span
             span
@@ -38,6 +38,7 @@ body
               li: a(href=prefix + "project/software/index.html") software
               li: a(href=prefix + "code.html") code snippets
       br
+    section.page-content#swap-page-buffer
     section.page-content#swap-page
       block body
   br
@@ -46,4 +47,19 @@ body
   footer
     script(src=prefix + "scripts/site.js")
     script(src=prefix + "lib/modernizr-2.8.3/no-touch.js")
+    script(src=prefix + "lib/codemirror-5.0/codemirror-runmode-standalone-compressed.js")
+    script(src=prefix + "lib/codemirror-5.0/codemirror-modes-compressed.js")
+    script.
+      var handleEachCodeBlock = function (element) {
+        var code = element.innerText
+        element.innerHTML = ""
+        CodeMirror.runMode(code, element.dataset.type, element)
+      }
+
+      var onSwapLoad = function () {
+        var codeBlocks = document.querySelectorAll("pre.code")
+        for (var i = 0; i < codeBlocks.length; i++)
+          handleEachCodeBlock(codeBlocks[i])
+      }
+      onSwapLoad()
     block footer

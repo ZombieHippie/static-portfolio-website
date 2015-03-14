@@ -4,7 +4,6 @@ block head
   title Code Snippets
   meta(name="description" content="Code snippets of Cole Lawrence (ZombieHippie).")
   meta(name="keywords" content="code snippets,web development,portfolio,Cole Lawrence,ZombieHippie,AZombieHippie,Cole R Lawrence")
-  meta(id="page-type" data-type="independent")
 
 //-code = require("code-snippets.cson")
 block body
@@ -64,16 +63,3 @@ block body
       li: a(href="https://github.com/ZombieHippie/Touch-Tabs-jQuery") ZombieHippie/Touch-Tabs-jQuery
       li: a(href="https://github.com/ZombieHippie/jade-to-static") ZombieHippie/jade-to-static
       li: a(href="https://github.com/ZombieHippie/diamond") ZombieHippie/diamond
-
-block footer
-  script(src="lib/codemirror-5.0/codemirror-runmode-standalone-compressed.js")
-  script(src="lib/codemirror-5.0/codemirror-modes-compressed.js")
-  script.
-    var handleEachCodeBlock = function (element) {
-      var code = element.innerText
-      element.innerHTML = ""
-      CodeMirror.runMode(code, element.dataset.type, element)
-    }
-    var codeBlocks = document.querySelectorAll("pre.code")
-    for (var i = 0; i < codeBlocks.length; i++)
-      handleEachCodeBlock(codeBlocks[i])

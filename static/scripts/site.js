@@ -1,7 +1,5 @@
 (function () {
 
-var currentPageType = null
-
 function getRequest (href, callback) {
   var req = new XMLHttpRequest()
   
@@ -9,7 +7,7 @@ function getRequest (href, callback) {
     if (req.readyState === 4) // done
       if (req.status === 200) {
         try {
-          var dom = HTMLParser(req.responseText)
+          var dom = Utility.HTMLParser(req.responseText)
           callback(null, dom)
         } catch (error) {
           callback(error)
@@ -22,31 +20,92 @@ function getRequest (href, callback) {
   req.open("GET", href)
   req.send()
 }
+var Utility = {
+  HTMLParser: function (anHTMLString) {
+    /* TODO compatibility with IE9 */
+    var parser = new DOMParser
+    return parser.parseFromString(anHTMLString, "text/html")
+  },
+  forEachIn: function (arr, fn) {
+    arr = Array.prototype.slice.call(arr) // copy
+    for (var i = 0; i < arr.length; i++) {
+      fn(arr[i], i)
+    }
+  },
+  isImgLoaded: function (imgEl) {
+    return imgEl.complete && typeof imgEl.naturalWidth === "number" && imgEl.naturalWidth !== 0
+  }
+}
 
-function HTMLParser(anHTMLString) {
-  /* TODO compatibility with IE9 */
-  var parser = new DOMParser
-  return parser.parseFromString(anHTMLString, "text/html")
+var swapPage = document.getElementById("swap-page")
+var swapBuffer = document.getElementById("swap-page-buffer")
+var Buffer = {
+  flush: function () {
+    Utility.forEachIn(swapBuffer.children, function (el) {
+      el.remove()
+    })
+  },
+  fill: function () {
+    Utility.forEachIn(swapPage.children, function (el) {
+      el.remove()
+      swapBuffer.appendChild(el)
+    })
+  },
+  resize: function () {
+    swapBuffer.style.width = swapPage.offsetWidth
+  }
 }
 
 // open pages here with transitions
 function openPage(path, skipPushState) {
+  Buffer.resize()
+  Buffer.fill()
+
   getRequest(path, function (error, dom) {
     if (error) {
-      window.location.href = path // Manually open page  
+      window.location.href = path // Manually open page
     } else {
-      var swapPage = document.getElementById("swap-page")
       var swapNav = document.getElementById("swap-nav")
       // title
       var titleText = dom.querySelector("title").innerText
       document.querySelector("title").innerText = titleText
-      // swap-page html
-      swapPage.innerHTML = dom.getElementById("swap-page").innerHTML
       // swap-nav html
       swapNav.innerHTML = dom.getElementById("swap-nav").innerHTML
+      // swap-page html
+      swapPage.innerHTML = dom.getElementById("swap-page").innerHTML
+
+      swapPage.style.visibility = "hidden"
+      // Wait for each image to be loaded
+      var newImgs = swapPage.querySelectorAll("img")
+      var loadingImgs = Array.prototype.filter.call(newImgs, function (img) {
+        return !Utility.isImgLoaded(img)
+      })
+      var imagesToLoad = loadingImgs.length
+      function renderPage () {
+        setTimeout( function () {
+          Buffer.flush()
+          swapPage.style.visibility = "visible"
+        }, 10)
+      }
+      function handleImgLoad () {
+        imagesToLoad--
+        if (imagesToLoad === 0)
+          renderPage()
+      }
+      if (imagesToLoad > 0)
+        for (var i = 0; i < loadingImgs.length; i++) {
+          loadingImgs[i].onload = handleImgLoad
+        }
+
+      else
+        renderPage()
+
       // listen on new anchors
-      attachListeners(swapPage)
       attachListeners(swapNav)
+      attachListeners(swapPage)
+
+      // from layout
+      //onSwapLoad()
 
       if (!skipPushState)
         history.pushState({path:path}, titleText, path)
@@ -59,7 +118,8 @@ function anchorClickHandler (event) {
   var isLeftClick = event.which === 1
   var anchor = this
   var isSameHost = anchor.hostname === window.location.hostname
-  if (isLeftClick && isSameHost) {
+  var isSamePath = anchor.pathname === window.location.pathname
+  if (isLeftClick && isSameHost && !isSamePath) {
     event.stopPropagation()
     event.preventDefault()
     openPage(anchor.pathname)
@@ -82,9 +142,6 @@ window.onpopstate = function (event) {
   else
     openPage(window.location.pathname, true)
 }
-
-// Initiallize page-type
-currentPageType = document.getElementById("page-type").dataset.type
 
 // Initially attach to all anchors
 attachListeners(document)

@@ -54,7 +54,8 @@ header.mast-head .navigation-menu {
   display: inline-block;
   background-color: whitesmoke;
   border-radius: .25rem;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.6)
+  box-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  cursor: pointer;
 }
 header .navigation-toggle.btn {
 }
@@ -76,20 +77,20 @@ header .navigation-icon>span {
 header.mast-head .navigation-icon>span {
   -webkit-transform: rotateZ(0deg);
   transform: rotateZ(0deg);
-  transition: all .5s;
+  transition: all .3s;
 }
-header.mast-head:target
+.navigation-menu[data-open="1"]
 .navigation-icon>span:nth-child(1) {
   background:red;
   -webkit-transform: rotateZ(0deg);
   transform: rotateZ(45deg);
   top: 40%;
 }
-header.mast-head:target
+.navigation-menu[data-open="1"]
 .navigation-icon>span:nth-child(2) {
   background:transparent;
 }
-header.mast-head:target
+.navigation-menu[data-open="1"]
 .navigation-icon>span:nth-child(3) {
   background:red;
   top: 40%;
@@ -98,8 +99,22 @@ header.mast-head:target
 }
 /* modernizr */
 .no-touch .navigation-menu:hover nav,
-header.mast-head:target nav { max-height: 20rem; margin-top: 1rem;}
+.navigation-menu[data-open="1"] nav { max-height: 20rem; margin-top: 1rem;}
 
+/******************
+ * Page swaps
+ */
+html[state=loading-images] #swap-page {
+  visibility: hidden;
+}
+#swap-page-buffer {
+  visibility: hidden;
+  position: absolute;
+}
+html[state=buffering] #swap-page-buffer,
+html[state=loading-images] #swap-page-buffer {
+  visibility: visible;
+}
 
 /******************
  * Index pages

@@ -19,16 +19,3 @@ block post-body
   p
     center: strong: a(href="http://github.com/ZombieHippie/TheFoxtrot" title="ZombieHippie/Foxtrot") Source Code
     center: strong: a(href="http://zombiehippie.github.io/TheFoxtrot/" title="Play Foxtrot game in this browser" ) Open the foxtrot game
-
-block footer
-  script(src=prefix + "lib/codemirror-5.0/codemirror-runmode-standalone-compressed.js")
-  script(src=prefix + "lib/codemirror-5.0/codemirror-modes-compressed.js")
-  script.
-    var handleEachCodeBlock = function (element) {
-      var code = element.innerText
-      element.innerHTML = ""
-      CodeMirror.runMode(code, element.dataset.type, element)
-    }
-    var codeBlocks = document.querySelectorAll("pre.code")
-    for (var i = 0; i < codeBlocks.length; i++)
-      handleEachCodeBlock(codeBlocks[i])
