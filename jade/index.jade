@@ -5,6 +5,13 @@ block head
   meta(name="description" content="All about Cole Lawrence (ZombieHippie); a friendly programmer always trying to learn more about web development and collaborative projects.")
   meta(name="keywords" content="Cole Lawrence,web developer,portfolio,ZombieHippie,AZombieHippie,Cole R Lawrence")
 
+//-projects = require("./projects.cson")
+mixin projectTile(category, name, slug, img, description)
+  li.project-item: a(href=prefix + "project/#{category}/#{slug}.html")
+    img(src=prefix + "thumb/#{img || (slug + '.png')}")
+    h3=name
+    p=description
+
 block body
   section
     center: img(src="images/about/cole-lawrence-arizona-landscape-2014-01-19.jpg" style="max-width: 100%" title="\"Professional\" photo of Cole Lawrence")
@@ -13,6 +20,13 @@ block body
     center: p I am attending Missouri State University for a computer science degree.
     //-center: img(src="images/about/cole-lawrence-and-roommates-2014-09-23.jpg" title="The roomates of room 206!")
     //-center: img(src="images/about/cole-lawrence-and-hall-council-2015-01-31.jpg" title="The Scholars House Hall Council of Spring 2015")
+  
+  ul.project-list
+    each category in Object.keys(projects)
+      li: h2(id=category)=category 
+      each project in projects[category]
+        +projectTile(category, project.name, project.slug, project.img, project.desc)  
+
   section
     strong Documents
     ul

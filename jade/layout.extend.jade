@@ -19,10 +19,10 @@ body
   article
     header.mast-head(id="navigation")
       h1 Cole Lawrence
-      img.icon(src=prefix + "images/about/cole-lawrence-square-2014-05-30.jpg")
+      a(href="/"): img.icon(src=prefix + "images/about/cole-lawrence-square-2014-05-30.jpg")
       br
       br
-      .navigation-menu(data-open="0")
+      //-.navigation-menu(data-open="0")
         a.navigation-toggle.btn(onclick="var d=this.parentNode.dataset; d.open=d.open==='0'?'1':'0';")
           .navigation-icon
             span
@@ -45,7 +45,7 @@ body
   br
   br
   footer
-    script(src=prefix + "scripts/site.js")
+    //-script(src=prefix + "scripts/site.js")
     script(src=prefix + "lib/modernizr-2.8.3/no-touch.js")
     script(src=prefix + "lib/codemirror-5.0/codemirror-runmode-standalone-compressed.js")
     script(src=prefix + "lib/codemirror-5.0/codemirror-modes-compressed.js")

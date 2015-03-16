@@ -32,7 +32,7 @@ block head
   block head-title
 
 block body
-  a.index-link(href="index.html"): h3="< " + category.name
+  a.index-link(href="/#" + category.slug): h3="< " + category.name
   .post-body
     block post-body
   br
