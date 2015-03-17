@@ -12,16 +12,4 @@
        <image:loc>http://colelawrence.com/images/about/cole-lawrence-arizona-landscape-2014-01-19.jpg</image:loc>
     </image:image>
   </url>
-  <url>
-    <loc>http://colelawrence.com/animations.html</loc>
-    <mobile:mobile/>
-  </url>
-  <url>
-    <loc>http://colelawrence.com/graphic-design.html</loc>
-    <mobile:mobile/>
-  </url>
-  <url>
-    <loc>http://colelawr.com/software.html</loc>
-    <mobile:mobile/>
-  </url>
 </urlset>
