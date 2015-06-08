@@ -22,10 +22,10 @@ module.exports = {
   },
   plugins: [
     new ExtractTextPlugin("static/styles.css", { allChunks: true })
-    /*, new webpack.optimize.UglifyJsPlugin({
+    , new webpack.optimize.UglifyJsPlugin({
       mangle: {
         except: ['$', 'exports', 'require']
       }
-    })*/
+    })/**/
   ]
 };

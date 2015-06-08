@@ -7,6 +7,9 @@
     "type": "git",
     "url": "https://github.com/ZombieHippie/static-portfolio-website.git"
   },
+  "scripts": {
+    "start": "node ./node_modules/webpack/bin/webpack.js && node ./node_modules/jade-to-static/jade-to-static.js --in=./jade --out=./static --port=3000"
+  },
   "dependencies": {
     "coffee-loader": "latest",
     "crossroads": "~0.12",
