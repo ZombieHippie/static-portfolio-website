@@ -120,7 +120,9 @@ body, html, body>article {
 body>article{
   overflow: auto;
 }
-#navigation { margin-top: 0vh; transition: margin 2s; }
+#navigation {
+  transition: margin 2s;
+}
 
 img.icon { width: 5rem; height: 5rem; border-radius: 2.5rem; }
 header.mast-head, footer { text-align: center }
@@ -182,7 +184,8 @@ center>img {
   height: 100%;
   z-index: 0;
 }
-.background-video video {
+.background-video video,
+.background-video img {
   position: absolute;
   top: 50%;
   left: 50%;

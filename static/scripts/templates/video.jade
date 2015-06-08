@@ -1,5 +1,8 @@
-video(autoplay onended='this.currentTime=#{loopstart};')
-  source(src="/video/#{filename}.ogv" type='video/ogg; codecs="theora, vorbis"')
-  source(src="/video/#{filename}.webm" type="video/webm")
-  source(src="/video/#{filename}.mp4" type="video/mp4")
-  | Your browser does not support the video tag.
+if isMobile
+  img(src="/video/#{filename}.jpg" alt="#{alt}")
+else
+  video(autoplay onended='this.currentTime=#{loopstart};' alt="#{alt}")
+    source(src="/video/#{filename}.ogv" type='video/ogg; codecs="theora, vorbis"')
+    source(src="/video/#{filename}.webm" type="video/webm")
+    source(src="/video/#{filename}.mp4" type="video/mp4")
+    | Your browser does not support the video tag.

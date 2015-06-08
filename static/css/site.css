@@ -9,7 +9,9 @@ body, html, body>article {
 body>article{
   overflow: auto;
 }
-#navigation { margin-top: 0vh; transition: margin 2s; }
+#navigation {
+  transition: margin 2s;
+}
 
 img.icon { width: 5rem; height: 5rem; border-radius: 2.5rem; }
 header.mast-head, footer { text-align: center }
