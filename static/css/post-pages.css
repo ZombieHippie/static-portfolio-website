@@ -1,0 +1,25 @@
+/******************
+ * Post pages
+ */
+
+/* "< Animation" link */
+a.index-link {
+text-decoration: none;
+font-weight: bold;
+font-size: 1.3rem;
+}
+a.index-link>* {
+margin:0;
+}
+.full-width {
+  position:relative;
+}
+.full-width>* {
+  position:absolute;
+  left:50%;
+  transform: translateX(-50%);
+}
+iframe[name="here_frame"] {
+  border: none;
+  margin: 2rem 0;
+}

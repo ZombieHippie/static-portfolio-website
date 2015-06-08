@@ -14,7 +14,7 @@ mixin projectnav(slug)
     -   return false;
     -}
   - });
-  table
+  table.nav-near.no-select
     tr
       td: a(href=prevPost.slug + ".html")
         span previous
@@ -32,11 +32,12 @@ block head
   block head-title
 
 block body
-  a.index-link(href="/#" + category.slug): h3="< " + category.name
-  .post-body
-    block post-body
-  br
-  br
-  br
-  - var slug = filename.match(/([^\/\\]+)\.jade$/)[1]
-  +projectnav(slug, category.slug)
+  section
+    a.index-link(href="/#" + category.slug): h3="< " + category.name
+    .post-body
+      block post-body
+    br
+    br
+    br
+    - var slug = filename.match(/([^\/\\]+)\.jade$/)[1]
+    +projectnav(slug, category.slug)

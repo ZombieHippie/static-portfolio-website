@@ -1,0 +1,24 @@
+/* Next and previous projects */
+table.nav-near {width:100%;}
+table.nav-near tr td:first-child,
+table.nav-near tr td:last-child {
+  text-align:center;
+  width: 5rem;
+  pointer-events: all;
+}
+.page-content {
+  position: relative;
+}
+@media only screen and (min-width: 54rem) { /*38 + 1 * 2 + 5 * 2 + 2 * 2 */
+  table.nav-near {
+    position: absolute;
+    left: 50%;
+    top: 10rem;
+    width: 54rem;
+    margin-left: -27rem;
+    margin-top: -10rem;
+  }
+  table.nav-near, table.nav-near tr, table.nav-near tr td:nth-child(2){
+    pointer-events: none;
+  }
+}

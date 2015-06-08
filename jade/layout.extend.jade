@@ -10,33 +10,17 @@ head
   meta(charset="UTF-8")
   meta(name="viewport" content="width=device-width, initial-scale=1")
   link(rel="shortcut icon" href=prefix + "favicon.ico")
-  link(href=prefix + "css/site.css" rel="stylesheet")
+  link(href=prefix + "styles.css" rel="stylesheet")
   link(href=prefix + "lib/codemirror-5.0/codemirror.css" rel="stylesheet")
   link(href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;lang=en" rel="stylesheet")
   block head
 
 body
-  article
+  article.no-select
     header.mast-head(id="navigation")
       h1 Cole Lawrence
-      a(href="/"): img.icon(src=prefix + "images/about/cole-lawrence-square-2014-05-30.jpg")
+      a(href="/index.html"): img.icon(src=prefix + "images/about/cole-lawrence-square-2014-05-30.jpg")
       br
-      br
-      //-.navigation-menu(data-open="0")
-        a.navigation-toggle.btn(onclick="var d=this.parentNode.dataset; d.open=d.open==='0'?'1':'0';")
-          .navigation-icon
-            span
-            span
-            span
-        .nav-links#swap-nav
-          nav
-            ul
-              li: strong NAVIGATION
-              li: a(href=prefix + "index.html") about
-              li: a(href=prefix + "project/animation/index.html") animations
-              li: a(href=prefix + "project/graphic-design/index.html") graphic designs
-              li: a(href=prefix + "project/software/index.html") software
-              li: a(href=prefix + "code.html") code snippets
       br
     section.page-content#swap-page-buffer
     section.page-content#swap-page
@@ -45,12 +29,11 @@ body
   br
   br
   footer
-    //-script(src=prefix + "scripts/site.js")
-    script(src=prefix + "lib/modernizr-2.8.3/no-touch.js")
+    script(src=prefix + "bundle.js")
     script(src=prefix + "lib/codemirror-5.0/codemirror-runmode-standalone-compressed.js")
     script(src=prefix + "lib/codemirror-5.0/codemirror-modes-compressed.js")
     script.
-      var handleEachCodeBlock = function (element) {
+      var highlightCodeBlock = function (element) {
         var code = element.innerText
         element.innerHTML = ""
         CodeMirror.runMode(code, element.dataset.type, element)
@@ -59,7 +42,7 @@ body
       this.onSwapLoad = function () {
         var codeBlocks = document.querySelectorAll("pre.code")
         for (var i = 0; i < codeBlocks.length; i++)
-          handleEachCodeBlock(codeBlocks[i])
+          highlightCodeBlock(codeBlocks[i])
       }
       this.onSwapLoad()
     block footer

@@ -8,6 +8,14 @@
     "url": "https://github.com/ZombieHippie/static-portfolio-website.git"
   },
   "dependencies": {
-    "jade-to-static": "latest"
+    "coffee-loader": "latest",
+    "crossroads": "~0.12",
+    "css-loader": "latest",
+    "extract-text-webpack-plugin": "latest",
+    "jade-to-static": "latest",
+    "jade-loader": "latest",
+    "jquery": "~2.1",
+    "riot": "~2.1",
+    "webpack": "~1.9"
   }
 }

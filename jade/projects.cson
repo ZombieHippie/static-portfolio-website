@@ -1,28 +1,3 @@
-"animation": [
-        name: "The Animator 2013"
-        slug:  "the-animator-2013"
-        img:  "the-animator-2013.png"
-        desc: "3D Animation in Maya created for the SCAD Challenge of 2013"
-        type: "animation"
-      ,
-        name: "Toasty"
-        slug:  "toasty-animation"
-        img:  "toasty.jpg"
-        desc: "3D Animation in Maya created at the SCAD Summer Enrichment Program"
-        type: "animation"
-      ,
-        name: "Lego Minecraft"
-        slug:  "lego-minecraft"
-        img:  "minecraftsma.jpg"
-        desc: "Stop motion animation created at the Broadmoor Technical Center"
-        type: "animation"
-      ,
-        name: "The Girl in Hyacinth Blue Trailer"
-        slug:  "hyacinth-blue-animation"
-        img:  "hyacinth.jpg"
-        desc: "Stop motion animation created for my 10th grade English class"
-        type: "animation"
-    ]
 "software": [
         name: "Portfolio Website 2014"
         slug:  "portfolio-website-2014"
@@ -59,6 +34,31 @@
         img:  "freesketch.jpg"
         desc: "A collaborative drawing canvas for multiple friends to draw on using Websockets and Nodejs"
         type: "software"
+    ]
+"animation": [
+        name: "The Animator 2013"
+        slug:  "the-animator-2013"
+        img:  "the-animator-2013.png"
+        desc: "3D Animation in Maya created for the SCAD Challenge of 2013"
+        type: "animation"
+      ,
+        name: "Toasty"
+        slug:  "toasty-animation"
+        img:  "toasty.jpg"
+        desc: "3D Animation in Maya created at the SCAD Summer Enrichment Program"
+        type: "animation"
+      ,
+        name: "Lego Minecraft"
+        slug:  "lego-minecraft"
+        img:  "minecraftsma.jpg"
+        desc: "Stop motion animation created at the Broadmoor Technical Center"
+        type: "animation"
+      ,
+        name: "The Girl in Hyacinth Blue Trailer"
+        slug:  "hyacinth-blue-animation"
+        img:  "hyacinth.jpg"
+        desc: "Stop motion animation created for my 10th grade English class"
+        type: "animation"
     ]
 "graphic-design": [
         name: "Vikings Robotics Club Branding"

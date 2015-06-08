@@ -1,31 +1,10 @@
-(function () {
+/**
+ *  site.js
+ *  Author: Cole Lawrence @ZombieHippie
+ */
+$ = require("jquery")
 
-function getRequest (href, callback) {
-  var req = new XMLHttpRequest()
-  
-  req.onreadystatechange = function () {
-    if (req.readyState === 4) // done
-      if (req.status === 200) {
-        try {
-          var dom = Utility.HTMLParser(req.responseText)
-          callback(null, dom)
-        } catch (error) {
-          callback(error)
-        }
-      } else {
-        callback(req.status)
-      }
-  }
-  req.overrideMimeType("text/html")
-  req.open("GET", href)
-  req.send()
-}
 var Utility = {
-  HTMLParser: function (anHTMLString) {
-    /* TODO compatibility with IE9 */
-    var parser = new DOMParser
-    return parser.parseFromString(anHTMLString, "text/html")
-  },
   forEachIn: function (arr, fn) {
     arr = Array.prototype.slice.call(arr) // copy
     for (var i = 0; i < arr.length; i++) {
@@ -60,19 +39,23 @@ var Buffer = {
 function openPage(path, skipPushState) {
   Buffer.resize()
   Buffer.fill()
+  document.body.scrollTop = 0
 
-  getRequest(path, function (error, dom) {
-    if (error) {
+  $.get(path)
+    .fail(function (error) {
+      console.error(error)
       window.location.href = path // Manually open page
-    } else {
-      var swapNav = document.getElementById("swap-nav")
+    })
+    .done(function (htmlString) {
+      var dom = document.createElement("html")
+      var domNodes = $.parseHTML(htmlString)
+      Utility.forEachIn(domNodes, dom.appendChild.bind(dom))
+
       // title
       var titleText = dom.querySelector("title").innerText
       document.querySelector("title").innerText = titleText
-      // swap-nav html
-      swapNav.innerHTML = dom.getElementById("swap-nav").innerHTML
       // swap-page html
-      swapPage.innerHTML = dom.getElementById("swap-page").innerHTML
+      swapPage.innerHTML = dom.querySelector("#swap-page").innerHTML
 
       swapPage.style.visibility = "hidden"
       // Wait for each image to be loaded
@@ -103,22 +86,21 @@ function openPage(path, skipPushState) {
         renderPage()
 
       // listen on new anchors
-      attachListeners(swapNav)
       attachListeners(swapPage)
 
       if (!skipPushState)
         history.pushState({path:path}, titleText, path)
-    }
-  })
+    })
 }
 
 // handle page navigations so we can animate
 function anchorClickHandler (event) {
   var isLeftClick = event.which === 1
   var anchor = this
+  var isTargetHere = anchor.target === "" || anchor.target === "_self"
   var isSameHost = anchor.hostname === window.location.hostname
   var isSamePath = anchor.pathname === window.location.pathname
-  if (isLeftClick && isSameHost && !isSamePath) {
+  if (isLeftClick && isTargetHere && isSameHost && !isSamePath) {
     event.stopPropagation()
     event.preventDefault()
     openPage(anchor.pathname)
@@ -145,5 +127,3 @@ window.onpopstate = function (event) {
 // Initially attach to all anchors
 attachListeners(document)
 console.log("ready.")
-
-})();
