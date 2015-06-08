@@ -106,6 +106,9 @@ margin:0;
 iframe[name="here_frame"] {
   border: none;
   margin: 2rem 0;
+}
+.page-content>:last-child {
+  margin-bottom: 100vh;
 }html { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
 h1, h2, h3, h4, h5 { font-family: "open sans", sans-serif; }
 body, html, body>article {

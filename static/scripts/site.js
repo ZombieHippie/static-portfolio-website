@@ -37,9 +37,11 @@ var Buffer = {
 
 // open pages here with transitions
 function openPage(path, skipPushState) {
+  var article = document.body.querySelector("article")
+  //var header = article.querySelector("header")
+  article.scrollTop = 0
   Buffer.resize()
   Buffer.fill()
-  document.body.scrollTop = 0
 
   $.get(path)
     .fail(function (error) {
