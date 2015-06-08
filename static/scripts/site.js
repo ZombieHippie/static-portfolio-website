@@ -111,6 +111,10 @@ function anchorClickHandler (event) {
 }
 
 function attachListeners (domEl) {
+  //full-width config
+  var r = $(".full-width")
+  r.height(r.find(">:first-child").height())
+  
   var anchors = domEl.querySelectorAll("a")
   for (var i = 0, anchor; i < anchors.length; i++) {
     anchor = anchors[i]
