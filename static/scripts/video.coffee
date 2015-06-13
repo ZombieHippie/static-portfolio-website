@@ -9,6 +9,7 @@ if isMobile
 
 videos = [
   ["couch-sit", "Me sitting on a comfortable couch, opening my laptop, and continuing to program.", 7.7]
+  ["ellie", "Ellie Mae Cherry sitting on the floor looking at me.", 22.23]
 ]
 
 $("body").prepend("<div class=\"background-video\"></div>")
