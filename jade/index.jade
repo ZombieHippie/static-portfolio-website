@@ -15,7 +15,7 @@ block body
   center: img(src="images/about/cole-lawrence-arizona-landscape-2014-01-19.jpg" style="max-width: 100%" title="\"Professional\" photo of Cole Lawrence")
   style.
     body:not(.is-mobile) center>img {display: none}
-    body #navigation { margin-bottom: 70vh; }
+    body #navigation { margin-bottom: 30vh; }
     body.is-mobile #navigation { margin-bottom: 10vh; }
   section
     center: h2 Hello, my name is Cole Lawrence
@@ -26,7 +26,7 @@ block body
   section
     ul.project-list
       each category in Object.keys(projects)
-        li: h2(id=category)=category 
+        li: h2(id=category)=category.replace(/^[a-z]/, function (match){return match.toUpperCase()})
         each project in projects[category]
           +projectTile(category, project.name, project.slug, project.img, project.desc)  
 

@@ -18,10 +18,12 @@ head
 body
   article.no-select
     header.mast-head(id="navigation")
-      h1 Cole Lawrence
-      a(href="/index.html"): img.icon(src=prefix + "images/about/cole-lawrence-square-2014-05-30.jpg")
-      br
-      br
+      a(href="/index.html" alt="Navigate home")
+        img.header-img(src=prefix + "images/header.png")
+        br
+        //-img.icon(src=prefix + "images/about/cole-lawrence-square-2014-05-30.jpg")
+        br
+        br
     section.page-content#swap-page-buffer
     section.page-content#swap-page
       block body

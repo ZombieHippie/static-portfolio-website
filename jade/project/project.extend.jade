@@ -16,17 +16,11 @@ mixin projectnav(slug)
   - });
   table.nav-near.no-select
     tr
-      td: a(href=prevPost.slug + ".html")
-        span previous
-        br
-        br
-        img.icon(src=prefix + "thumb/" + prevPost.img)
+      td: a(href=prevPost.slug + ".html" title=prevPost.name)
+        img.icon(src=prefix + "css/arrow-left-alt-2.png" style="background-image:url(#{prefix}thumb/#{prevPost.img});")
       td
-      td: a(href=nextPost.slug + ".html")
-        span next
-        br
-        br
-        img.icon(src=prefix + "thumb/" + nextPost.img)
+      td: a(href=nextPost.slug + ".html" title=nextPost.name)
+        img.icon(src=prefix + "css/arrow-right-alt-2.png" style="background-image:url(#{prefix}thumb/#{nextPost.img});")
 
 block head
   block head-title

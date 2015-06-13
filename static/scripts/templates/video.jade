@@ -1,5 +1,5 @@
 if isMobile
-  img(src="/video/#{filename}.jpg" alt="#{alt}")
+  div(style="background-image: url(/video/#{filename}.jpg)" alt="#{alt}")
 else
   video(autoplay onended='this.currentTime=#{loopstart};' alt="#{alt}")
     source(src="/video/#{filename}.ogv" type='video/ogg; codecs="theora, vorbis"')

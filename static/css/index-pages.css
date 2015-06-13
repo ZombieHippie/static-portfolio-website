@@ -1,7 +1,9 @@
 /******************
  * Index pages
  */
-
+ul.project-list li h2 {
+  margin-top: 3rem;
+}
 ul.project-list {
   list-style: none;
   text-align: center;

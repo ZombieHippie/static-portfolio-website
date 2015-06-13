@@ -2,7 +2,7 @@
  *  site.js
  *  Author: Cole Lawrence @ZombieHippie
  */
-$ = require("jquery")
+var $ = require("jquery")
 
 var Utility = {
   forEachIn: function (arr, fn) {
@@ -132,4 +132,4 @@ window.onpopstate = function (event) {
 
 // Initially attach to all anchors
 attachListeners(document)
-console.log("ready.")
+console.log("You can also view the source code for my website at it's repository on Github at https://github.com/ZombieHippie/static-portfolio-website")

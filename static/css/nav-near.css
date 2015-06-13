@@ -9,6 +9,10 @@ table.nav-near tr td:last-child {
 .page-content {
   position: relative;
 }
+
+table.nav-near .icon {
+  background-size: cover;
+}
 @media only screen and (min-width: 54rem) { /*38 + 1 * 2 + 5 * 2 + 2 * 2 */
   table.nav-near {
     position: absolute;
@@ -17,6 +21,9 @@ table.nav-near tr td:last-child {
     width: 54rem;
     margin-left: -27rem;
     margin-top: -10rem;
+  }
+  table.nav-near .icon {
+    box-shadow: 0 2px 1rem rgba(0,0,0,0.3);
   }
   table.nav-near, table.nav-near tr, table.nav-near tr td:nth-child(2){
     pointer-events: none;

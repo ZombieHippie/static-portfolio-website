@@ -10,16 +10,15 @@ body>article{
   overflow: auto;
 }
 #navigation {
-  transition: margin 2s;
+  //transition: margin 2s;
 }
 
 img.icon { width: 5rem; height: 5rem; border-radius: 2.5rem; }
 header.mast-head, footer { text-align: center }
 header.mast-head { padding-top: 0;}
-header.mast-head h1 {margin: 0; padding: 1rem; display: block}
-header.mast-head nav ul {
-  list-style: none;
-  padding: 0;
+header.mast-head img.header-img { max-width: 90vw; margin: 0 auto; margin-bottom: -15vw; }
+@media only screen and (min-width: 54rem) {
+  header.mast-head img.header-img { margin-bottom: -10rem; }
 }
 section.page-content {
   margin: 0;
@@ -45,6 +44,10 @@ a:visited {color: dodgerblue;}
 /******************
  * Page swaps
  */
+#swap-page section {
+  box-shadow: 0 2px 1rem rgba(0,0,0,0.3);
+  margin-bottom: 5vw;
+}
 html[state=loading-images] #swap-page {
   visibility: hidden;
 }
